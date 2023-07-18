@@ -1,0 +1,35 @@
+.card {
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px !important;
+  border: 2px solid rgb(35, 56, 68);
+}
+.card:hover {
+  cursor: pointer;
+  border: 5px solid rgb(19, 29, 36);
+}
+.card_title {
+  font-size: 16px;
+  color: rgb(35, 56, 68);
+}
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image_container img {
+  width: 150px;
+  height: 250px;
+}
+
+@media (min-width: 441px) and (max-width: 990px) {
+  .image_container {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 440px) {
+  .image_container {
+    padding: 0px;
+  }
+}
