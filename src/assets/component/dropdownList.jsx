@@ -6,7 +6,7 @@ const HorizontalDropdowns = () => {
   return (
     <div className={styles.dropdownList_container}>
       <div className={styles.dropdownGrid}>
-        <select className={styles.items}>
+        <select className={styles.items} defaultValue={"Style"}>
           <option className={styles.items_option} value='item1'>
             Item 1
           </option>
