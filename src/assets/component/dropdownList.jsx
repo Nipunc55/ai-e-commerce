@@ -7,7 +7,12 @@ const HorizontalDropdowns = () => {
     <div className={styles.dropdownList_container}>
       <div className={styles.dropdownGrid}>
         <select className={styles.items}>
-          <option className={styles.items_option} value='item1'>
+          <option
+            className={styles.items_option}
+            value='item1'
+            disabled
+            selected
+          >
             Situations
           </option>
           <option className={styles.items_option} value='item2'>
@@ -31,7 +36,12 @@ const HorizontalDropdowns = () => {
         </select>
 
         <select className={styles.items}>
-          <option className={styles.items_option} value='item1'>
+          <option
+            className={styles.items_option}
+            value='item1'
+            disabled
+            selected
+          >
             Colors
           </option>
           <option className={styles.items_option} value='item2'>
@@ -61,7 +71,12 @@ const HorizontalDropdowns = () => {
         </select>
 
         <select className={styles.items}>
-          <option className={styles.items_option} value='item1'>
+          <option
+            className={styles.items_option}
+            value='item1'
+            disabled
+            selected
+          >
             Genders
           </option>
           <option className={styles.items_option} value='item2'>
@@ -76,7 +91,12 @@ const HorizontalDropdowns = () => {
         </select>
 
         <select className={styles.items}>
-          <option className={styles.items_option} value='item1'>
+          <option
+            className={styles.items_option}
+            value='item1'
+            disabled
+            selected
+          >
             Times
           </option>
           <option className={styles.items_option} value='item2'>
@@ -94,7 +114,12 @@ const HorizontalDropdowns = () => {
         </select>
 
         <select className={styles.items}>
-          <option className={styles.items_option} value='item1'>
+          <option
+            className={styles.items_option}
+            value='item1'
+            disabled
+            selected
+          >
             Categories
           </option>
           <option className={styles.items_option} value='item2'>
