@@ -1,8 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./cardComponent.module.css";
 
-const CardContainer = () => {
+const CardContainer = (props) => {
+  const navigate=useNavigate()
+  function cardOnClick(){
+      navigate(`/card/${props.id}`)
+  }
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={cardOnClick}>
       <div className={styles.image_container}>
         <img
           src='./icons/tone-on-tone-dressing-blue-oxford-shirt.webp'
