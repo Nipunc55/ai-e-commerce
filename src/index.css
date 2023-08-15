@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 /* body {
   background-color: rgb(35, 56, 68);
+=======
+body {
+background: rgb(1,0,14);
+/* background: linear-gradient(90deg, rgba(1,0,14,1) 0%, rgba(9,9,121,1) 37%, rgba(5,91,175,1) 69%, rgba(220,222,255,1) 100%); */
+background: linear-gradient(180deg, rgba(1, 0, 14, 1) 0%, rgba(9, 9, 121, 1) 37%, rgba(5, 91, 175, 1) 69%, rgba(220, 222, 255, 1) 100%);
+
+}
+#root{
+  height: 100vh;
+  padding: 2%;
+
+>>>>>>> fbcbbd80a292740ecd765021d1deac4abd186eb0
 }
 body {
   background-image: linear-gradient(to bottom, rgb(35, 56, 68), rgb(35, 56, 68)ffffff);
