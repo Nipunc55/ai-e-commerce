@@ -1,0 +1,35 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  margin: 50px 50px 50px 50px;
+  border: 1px solid #cccccc50;
+}
+
+.image_container {
+  padding: 50px;
+}
+
+.text_container {
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.card_title {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.img_fluid {
+  max-width: 100%;
+}
+
+@media (max-width: 440px) {
+  .card {
+    margin: 5px;
+  }
+  .image_container {
+    padding: 5px;
+  }
+}

@@ -19,6 +19,13 @@
   color: rgb(0, 0, 0);
 }
 
+@media (min-width: 441px) and (max-width: 990px) {
+  .items {
+    padding: 5px;
+    border-radius: 10px;
+  }
+}
+
 @media (max-width: 440px) {
   .dropdownList_container {
     display: flex;
@@ -28,6 +35,7 @@
   .dropdownGrid {
     grid-template-columns: 1fr;
   }
+
   .items {
     width: 90vw;
   }
