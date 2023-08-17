@@ -1,15 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./cardComponent.module.css";
-import {useNavigate} from "react-router-dom";
+
 import CardPopup from "./cardPopup";
 
-<<<<<<< HEAD:src/assets/component/cardComponent.jsx
-const CardContainer = () => {
-  const navigate = useNavigate();
-=======
 const FullCard = () => {
+  const navigate=useNavigate()
   const param=useParams()
->>>>>>> fbcbbd80a292740ecd765021d1deac4abd186eb0:src/components/home/FullCard.jsx
   return (
     <div className={styles.card} >
       <div className={styles.image_container}>
