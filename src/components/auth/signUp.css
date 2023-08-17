@@ -8,12 +8,12 @@
 
 }
 .form-container {
-  border-radius: 5%;
-  padding: 5%;
-  background-color: rgba(0, 0, 0, 0.177);
+  padding: 10%;
+ border: 1px rgba(0, 0, 0, 0.177); 
+  
 }
 .h1-signUp {
-  color: rgba(50, 78, 87, 0);
+  color: val(--text-color);
   text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.514),
     1px -1px 0 rgba(255, 255, 255, 0.514), -1px 1px 0 rgba(255, 255, 255, 0.514),
     1px 1px 0 rgba(255, 255, 255, 0.514);
@@ -21,7 +21,7 @@
 }
 
 .form-label {
-  color: rgb(255, 255, 255) !important;
+  color: val(--text-color) !important;
 }
 .signup-btn {
   border: 2px solid rgb(255, 255, 255);

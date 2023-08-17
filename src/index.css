@@ -41,3 +41,10 @@ h1 {
   font-size: 4rem;
   letter-spacing: 2rem;
 }
+:root {
+  --primary-color: #007bff;
+  /* Blue */
+  --secondary-color: #6c757d;
+  /* Gray */
+  --text-color:#000000;
+}

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./signUp.css";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
-
+import signImage from "../../assets/images/sign.png"
 const SignupForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -43,9 +44,13 @@ const SignupForm = () => {
 	};
 
 	return (
-		<div
-			className='auth_container'
-			onSubmit={handleSubmit}>
+		
+		<div className='grid_container'>
+			<div className='pic_container'>
+				<img src={signImage} />
+			</div>
+
+			<div className='login_container '>
 			<form className='form-container'>
 				<h1 className='h1-signUp'>SignUp</h1>
 				{/* 2 column grid layout with text inputs for the first and last names */}
@@ -110,6 +115,7 @@ const SignupForm = () => {
 					Sign up
 				</button>
 			</form>
+			</div>
 		</div>
 	);
 };

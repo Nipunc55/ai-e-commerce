@@ -2,7 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./logIn.css";
 import { useNavigate } from "react-router-dom";
-
+import signImage from "../../assets/images/sign.png"
 const LoginForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const LoginForm = () => {
 	return (
 		<div className='grid_container'>
 			<div className='pic_container'>
-				<h1>hi baba</h1>
+				<img src={signImage} />
 			</div>
 
 			<div className='login_container '>

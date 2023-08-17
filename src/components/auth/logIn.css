@@ -9,14 +9,15 @@
 	padding: 20px;
 }
 .pic_container {
-	background-color: rgb(65, 101, 112);
+	border: 1px rgb(8, 8, 8);
+	background-color: rgb(255, 255, 255);
 	flex: 1;
 }
 .login-form {
 	padding: 20%;
 }
 .h1-login {
-	color: rgb(65, 101, 112);
+	color:val(--text-color);
 }
 .loginform-control {
 	width: 100%;
@@ -35,7 +36,9 @@
 	color: rgb(65, 101, 112);
 	border: 2px solid rgb(65, 101, 112);
 }
-
+.pic_container img{
+  
+}
 @media (max-width: 991px) {
 	.grid_container {
 		display: unset;
