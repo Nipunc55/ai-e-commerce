@@ -1,0 +1,51 @@
+.grid_container {
+	display: flex;
+	margin-top: 1%;
+	border: 1px solid rgba(95, 94, 94, 0.507);
+}
+.login_container {
+	background-color: rgb(255, 255, 255);
+	flex: 1;
+	padding: 20px;
+}
+.pic_container {
+	background-color: rgb(65, 101, 112);
+	flex: 1;
+}
+.login-form {
+	padding: 20%;
+}
+.h1-login {
+	color: rgb(65, 101, 112);
+}
+.loginform-control {
+	width: 100%;
+}
+.login-btn {
+	border: 2px solid rgb(65, 101, 112);
+	border-radius: 20px;
+	background-color: rgb(65, 101, 112);
+	padding: 5px 30px 5px 30px !important;
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	font-weight: 600;
+}
+.login-btn:hover {
+	background-color: rgb(255, 255, 255);
+	color: rgb(65, 101, 112);
+	border: 2px solid rgb(65, 101, 112);
+}
+
+@media (max-width: 991px) {
+	.grid_container {
+		display: unset;
+		margin-top: 0%;
+		border: 0px solid rgba(95, 94, 94, 0.507);
+	}
+	.login_container {
+		flex: 0;
+	}
+	.pic_container {
+		visibility: hidden;
+	}
+}
