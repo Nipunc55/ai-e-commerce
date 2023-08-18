@@ -35,14 +35,16 @@
 }
 /* .pic_container img {
 } */
-@media (max-width: 991px) {
+@media (max-width: 990px) {
 	.grid_container {
+		margin-top: 0%;
 		display: unset;
 		border: 0px solid rgba(95, 94, 94, 0.507);
 	}
 	.login_container {
 		flex: 0;
 		border: 1px solid rgba(95, 94, 94, 0.507);
+		margin-top: 1%;
 	}
 	.pic_container {
 		display: none;
@@ -52,11 +54,11 @@
 	}
 }
 
-@media (max-width: 991px) {
-	.login-btn {
-		padding: 5px 20px 5px 20px !important;
+@media (max-width: 441px) {
+	.login_container {
+		padding: 0%;
 	}
-	.signup-btn {
-		padding: 5px 20px 5px 20px !important;
+	.login-btn {
+		padding: 5px 15px 5px 15px !important;
 	}
 }

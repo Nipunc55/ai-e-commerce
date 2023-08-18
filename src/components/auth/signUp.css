@@ -44,23 +44,12 @@
     padding: 10px 5px 10px 5px !important;
   }
 }
-
-@media (max-width: 767px) {
-  .signIn_container {
-    padding: 0;
-  }
-
-  .form-container {
-    padding: 50px;
-  }
-
-  .h1-signUp {
-    font-size: 24px;
-  }
-
-  .signup-btn {
-    font-size: 16px;
-    padding: 5px 20px;
-    border-radius: 10px;
-  }
-} */
+*/
+@media (max-width: 441px) {
+	.h1-signUp {
+		letter-spacing: 0.5em;
+	}
+	.signup-btn {
+		padding: 5px 15px 5px 15px !important;
+	}
+}
