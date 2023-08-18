@@ -17,10 +17,7 @@
 	padding: 20%;
 }
 .h1-login {
-	color:val(--text-color);
-}
-.loginform-control {
-	width: 100%;
+	color: val(--text-color);
 }
 .login-btn {
 	border: 2px solid rgb(65, 101, 112);
@@ -36,19 +33,30 @@
 	color: rgb(65, 101, 112);
 	border: 2px solid rgb(65, 101, 112);
 }
-.pic_container img{
-  
-}
+/* .pic_container img {
+} */
 @media (max-width: 991px) {
 	.grid_container {
 		display: unset;
-		margin-top: 0%;
 		border: 0px solid rgba(95, 94, 94, 0.507);
 	}
 	.login_container {
 		flex: 0;
+		border: 1px solid rgba(95, 94, 94, 0.507);
 	}
 	.pic_container {
-		visibility: hidden;
+		display: none;
+	}
+	.login-form {
+		padding: 10%;
+	}
+}
+
+@media (max-width: 991px) {
+	.login-btn {
+		padding: 5px 20px 5px 20px !important;
+	}
+	.signup-btn {
+		padding: 5px 20px 5px 20px !important;
 	}
 }

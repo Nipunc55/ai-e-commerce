@@ -2,7 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./logIn.css";
 import { useNavigate } from "react-router-dom";
-import signImage from "../../assets/images/sign.png"
+import signImage from "../../assets/images/sign.png";
 const LoginForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -58,7 +58,7 @@ const LoginForm = () => {
 						<input
 							type='email'
 							id='form3Example3'
-							className='loginform-control'
+							className='form-control'
 							name={"email"}
 							value={formData.email}
 							onChange={handleChange}
@@ -75,7 +75,7 @@ const LoginForm = () => {
 						<input
 							type='password'
 							id='form3Example4'
-							className='loginform-control'
+							className='form-control'
 							name={"password"}
 							value={formData.password}
 							onChange={handleChange}
@@ -90,7 +90,7 @@ const LoginForm = () => {
 					{/* Submit button */}
 					<button
 						type='submit'
-						className='btn login-btn mb-4 me-4'>
+						className='btn login-btn mb-4 me-1 me-lg-4'>
 						Log In
 					</button>
 
