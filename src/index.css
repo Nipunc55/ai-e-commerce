@@ -42,10 +42,11 @@ h1 {
   letter-spacing: 2rem;
 }
 :root {
-  --primary-color: #007bff;
+  --primary-color: #080042;
   /* Blue */
   --main-color: rgb(65, 101, 112);
-  --secondary-color: #70777e;
+  --secondary-color: #ffffff;
   /* Gray */
   --text-color:#000000;
+  
 }

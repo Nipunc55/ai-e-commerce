@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dropdownList.module.css";
+import { DropDownInput } from './searchBar';
 
 const HorizontalDropdowns = ({onSelect}) => {
-    const [selectedOptions, setSelectedOptions] = useState({
-    situations: null,
-    color: null,
-    gender: null,
-    type: null,
-    categories: null,
-  });
+   const { selectedOptions, setSelectedOptions } = useContext(DropDownInput);
+ 
 
   const handleDropdownChange = (event, dropdownName) => {
     const newSelectedOptions= {...selectedOptions,
       [dropdownName]: event.target.value,}
-    setSelectedOptions(newSelectedOptions);
-    onSelect(newSelectedOptions)
-    console.log("drop down");
+   
+    setSelectedOptions(newSelectedOptions)
+    
+    
   };
   return (
     <div className={styles.dropdownList_container}>
@@ -50,7 +47,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           </option>
         </select>
 
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
+        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'color')}>
           <option
             className={styles.items_option}
             value='item1'
@@ -85,7 +82,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           </option>
         </select>
 
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
+        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'gender')}>
           <option
             className={styles.items_option}
             value='item1'
@@ -105,7 +102,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           </option>
         </select>
 
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
+        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'type')}>
           <option
             className={styles.items_option}
             value='item1'
@@ -128,7 +125,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           </option>
         </select>
 
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
+        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'categories')}>
           <option
             className={styles.items_option}
             value='item1'

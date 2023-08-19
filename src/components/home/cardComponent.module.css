@@ -1,12 +1,12 @@
 .card {
   padding: 10px;
-  background-color: rgba(153, 151, 151, 0.445);
+  background-color: var(--secondary-color);
   border-radius: 10px !important;
   border: 2px solid rgb(35, 56, 68);
 }
 .card:hover {
   cursor: pointer;
-  border: 5px solid rgb(19, 29, 36);
+  border: 1px solid rgb(19, 29, 36);
 }
 .card_title {
   font-size: 16px;

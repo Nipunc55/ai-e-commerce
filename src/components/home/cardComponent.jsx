@@ -5,15 +5,23 @@ const CardContainer = (props) => {
   const navigate=useNavigate()
   function cardOnClick(){
       navigate(`/card/${props.id}`)
+      console.log(props.data);
   }
   return (
     <div className={styles.card} onClick={cardOnClick}>
       <div className={styles.image_container}>
-        <img
-          src='./icons/tone-on-tone-dressing-blue-oxford-shirt.webp'
-          className='img-fluid'
-          alt='Card Image'
-        />
+        {Object.keys(props.data).length>0 && (
+          Object.keys(props.data).map((key)=>(
+             <img
+              key={key}
+              src={`/images/dataset/${props.data[key]}`}
+              alt={key}
+              className='img-fluid'
+              // style={{ width: '100px', height: '100px', margin: '10px' }}
+            />
+          ))
+        )}
+       
       </div>
       <div>
         <h3 className={styles.card_title}>Item name with description</h3>
