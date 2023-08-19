@@ -1,7 +1,8 @@
 .main-container {
-  /* padding: 20px 0px 10px 0px; */
-  /* align-items: center; */
-  justify-content: center;
-  /* background-color: rgb(35, 56, 68); */
-  /* height: 100%; */
+	/* padding: 20px 0px 10px 0px; */
+	/* align-items: center; */
+	justify-content: center;
+	height: 100vh;
+	/* background-color: rgb(35, 56, 68); */
+	/* height: 100%; */
 }

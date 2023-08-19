@@ -3,26 +3,27 @@ import SearchBar from "./home/searchBar";
 import HorizontalDropdowns from "./home/dropdownList";
 import CardGrid from "./home/cardGrid";
 import { useState } from "react";
+import Navbar from "./home/navBar";
+import Footer from "./home/footer";
 
 function Home() {
-
-	const [items, setItems] = useState([])
+	const [items, setItems] = useState([]);
 	async function GetItems(data) {
 		const baseUrl = "http://127.0.0.1:8000/predict";
 		const {
 			text = "i want to participate to wedding at night",
 			color = "white",
 			type = "wedding",
-			situation="morning",
+			situation = "morning",
 			categories = "t-shirt",
 			gender = "male",
 		} = {
 			text: "i want to participate to wedding at night",
-			color : "white",
-			type : "wedding",
-			situation:"morning",
-			categories : "t-shirt",
-			gender : "male",
+			color: "white",
+			type: "wedding",
+			situation: "morning",
+			categories: "t-shirt",
+			gender: "male",
 		};
 		//${text}
 		console.log(text, type, gender, categories);
@@ -36,15 +37,14 @@ function Home() {
 					},
 				}
 			);
-			
-			if(!response.ok){
-				alert("no data found")
+
+			if (!response.ok) {
+				alert("no data found");
 			}
 
 			const data = await response.json();
-			
-			if(response.ok)setItems(data);
 
+			if (response.ok) setItems(data);
 		} catch (error) {
 			// Handle any network or other errors
 			console.error("Error occurred while calling the API", error);
@@ -53,10 +53,16 @@ function Home() {
 
 	return (
 		<>
+			<Navbar />
 			<div className='container-sm'>
-				<SearchBar GetItems={(data)=>{GetItems(data)}} />
-				<CardGrid itemList={items}/>
+				<SearchBar
+					GetItems={(data) => {
+						GetItems(data);
+					}}
+				/>
+				<CardGrid itemList={items} />
 			</div>
+			<Footer />
 		</>
 	);
 }

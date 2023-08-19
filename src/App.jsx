@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <div className='main-container'>
-        <div className='container-sm'>
           <Router>
             <Routes>
               <Route path='/' exact element={<LoginForm/>} />
@@ -26,7 +25,6 @@ function App() {
             </Routes>
           </Router>
         </div>
-      </div>
     </>
   );
 }
