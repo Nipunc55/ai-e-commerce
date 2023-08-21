@@ -6,3 +6,7 @@
 	/* background-color: rgb(35, 56, 68); */
 	/* height: 100%; */
 }
+.empty-card-grid{
+	padding: 25%;
+	font-size: 80px;
+}

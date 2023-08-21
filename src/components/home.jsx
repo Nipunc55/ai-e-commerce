@@ -18,8 +18,7 @@ function Home() {
 			categories = "t-shirt",
 			gender = "male",
 		} = data;
-		//${text}
-		// console.log( type, gender, categories);
+		
 		console.log(`${type}/${color}/${situation}/${gender}/${categories}`);
 		try {
 			const response = await fetch(
@@ -47,16 +46,17 @@ function Home() {
 
 	return (
 		<>
-			<Navbar />
+			
 			<div className='container-sm'>
 				<SearchBar
 					GetItems={(data) => {
 						GetItems(data);
 					}}
 				/>
-				<CardGrid itemList={items} />
+				{items.length>0 ?(<CardGrid itemList={items} />):(<div className="empty-card-grid">Serach...</div>)}
+				
 			</div>
-			<Footer />
+			
 		</>
 	);
 }

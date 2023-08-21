@@ -1,25 +1,23 @@
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import styles from "./cardComponent.module.css";
 
-const CardContainer = (props) => {
-  const navigate=useNavigate()
-  //  const history = useHistory();
-  function cardOnClick(){
-      navigate(`/card/${props.data}`)
-  //  history.push({
-  //     pathname: '/card',
-  //     state: { },
-  //   });
-  //      console.log(props.data);
-  }
+const CardContainer = ({data}) => {
+  
+   const navigate = useNavigate();
+  
+    const navigateToDestination = () => {
+    navigate('/card', {
+      state: { data } // Pass data directly without the "props" key
+    });
+  };
   return (
-    <div className={styles.card} onClick={cardOnClick}>
+    <div className={styles.card} onClick={navigateToDestination}>
       <div className={styles.image_container}>
-        {Object.keys(props.data).length>0 && (
-          Object.keys(props.data).map((key)=>(
+        {Object.keys(data).length>0 && (
+          Object.keys(data).map((key)=>(
              <img
               key={key}
-              src={`/images/dataset/${props.data[key]}`}
+              src={`/images/dataset/${data[key]}`}
               alt={key}
               className='img-fluid'
               // style={{ width: '100px', height: '100px', margin: '10px' }}
