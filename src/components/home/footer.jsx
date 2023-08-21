@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const footerStyle = {
-	position: "fixed",
+    position: "fixed",
 	left: 0,
 	bottom: 0,
 	width: "100%",
@@ -14,7 +14,7 @@ const footerStyle = {
 
 function Footer() {
 	return (
-		<footer className='bg-light text-center text-lg-start fixed-bottom'>
+		<footer className='bg-light text-center text-lg-start position-relative bottom-0'>
 			{/* Copyright */}
 			<div
 				className='text-center p-3'
@@ -23,7 +23,7 @@ function Footer() {
 				<a
 					className='text-dark'
 					href='https://mdbootstrap.com/'>
-					MDBootstrap.com
+					Clothing E- e commerce
 				</a>
 			</div>
 			{/* Copyright */}

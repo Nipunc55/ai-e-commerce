@@ -7,13 +7,9 @@ export const DropDownInput = createContext();
 
 const SearchBar = ({ GetItems }) => {
 	const [userInput, setUserInput] = useState("");
-	const [selectedOptions, setSelectedOptions] = useState({
-		situations: null,
-		color: null,
-		gender: null,
-		type: null,
-		categories: null,
-	});
+	const [selectedOptions, setSelectedOptions] = useState(
+		''
+	);
 	useEffect(() => {
 	  console.log(selectedOptions);
 	}, [selectedOptions])

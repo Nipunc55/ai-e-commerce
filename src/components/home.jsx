@@ -17,19 +17,13 @@ function Home() {
 			situation = "morning",
 			categories = "t-shirt",
 			gender = "male",
-		} = {
-			text: "i want to participate to wedding at night",
-			color: "white",
-			type: "wedding",
-			situation: "morning",
-			categories: "t-shirt",
-			gender: "male",
-		};
+		} = data;
 		//${text}
-		console.log(text, type, gender, categories);
+		// console.log( type, gender, categories);
+		console.log(`${type}/${color}/${situation}/${gender}/${categories}`);
 		try {
 			const response = await fetch(
-				`${baseUrl}/${type}/${color}/${situation}/${gender}/${categories},skirt`,
+				`${baseUrl}/${type}/${color}/${situation}/${gender}/${categories},skirt,blouse,shirt,frog`,
 				{
 					method: "GET",
 					headers: {

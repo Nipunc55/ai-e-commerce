@@ -14,12 +14,15 @@
 }
 .image_container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  justify-content: space-between;
+    /* Distribute items evenly along the main axis */
+  flex-wrap: wrap;
 }
 .image_container img {
-  width: 150px;
-  height: 250px;
+  width: 50%;
+  height:50%;
 }
 
 @media (min-width: 441px) and (max-width: 990px) {

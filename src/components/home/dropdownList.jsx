@@ -21,9 +21,9 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
           <option
             className={styles.items_option}
-            value='item1'
+            defaultValue='item1'
             disabled
-            selected
+            
           >
             Situations
           </option>
@@ -50,22 +50,22 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'color')}>
           <option
             className={styles.items_option}
-            value='item1'
+            defaultValue=''
             disabled
-            selected
+            
           >
             Colors
           </option>
-          <option className={styles.items_option} value='item2'>
+          <option className={styles.items_option} value='red'>
             Red
           </option>
-          <option className={styles.items_option} value='item3'>
+          <option className={styles.items_option} value='blue'>
             Blue
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='green'>
             Green
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='black'>
             Black
           </option>
           <option className={styles.items_option} value='item4'>
@@ -85,19 +85,18 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'gender')}>
           <option
             className={styles.items_option}
-            value='item1'
+            defaultValue='male'
             disabled
-            selected
           >
             Genders
           </option>
-          <option className={styles.items_option} value='item2'>
+          <option className={styles.items_option} value='male'>
             Male
           </option>
-          <option className={styles.items_option} value='item3'>
+          <option className={styles.items_option} value='female'>
             Female
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='unisex'>
             Unisex
           </option>
         </select>
@@ -105,22 +104,22 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'type')}>
           <option
             className={styles.items_option}
-            value='item1'
+            defaultValue='times'
             disabled
-            selected
+            
           >
             Times
           </option>
-          <option className={styles.items_option} value='item2'>
+          <option className={styles.items_option} value='night'>
             Night
           </option>
-          <option className={styles.items_option} value='item3'>
+          <option className={styles.items_option} value='morning'>
             Morning
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='evening'>
             Evening
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='noon'>
             Noon
           </option>
         </select>
@@ -128,61 +127,61 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'categories')}>
           <option
             className={styles.items_option}
-            value='item1'
+            defaultValue=''
             disabled
-            selected
+            
           >
             Categories
           </option>
-          <option className={styles.items_option} value='item2'>
+          <option className={styles.items_option} value='trousers'>
             Trousers
           </option>
-          <option className={styles.items_option} value='item3'>
+          <option className={styles.items_option} value='t-shirts'>
             T-Shirts
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='shoes'>
             Shoues
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='jeans'>
             Jeans
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='waistcoat'>
             Waistcoat
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='blouse'>
             Blouse
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='jacket'>
             Jacket
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='dress'>
             Dress
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='shirt'>
             Shirt
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='suit'>
             Suit
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='coat'>
             Coat
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='shorts'>
             Shorts
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='sports'>
             Sports
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='skirts'>
             Skirts
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='tops'>
             Tops
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='hoodie'>
             Hoodie
           </option>
-          <option className={styles.items_option} value='item4'>
+          <option className={styles.items_option} value='tie'>
             Tie
           </option>
         </select>

@@ -1,11 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useHistory  } from "react-router-dom";
 import styles from "./cardComponent.module.css";
 
 const CardContainer = (props) => {
   const navigate=useNavigate()
+   const history = useHistory();
   function cardOnClick(){
-      navigate(`/card/${props.id}`)
-      console.log(props.data);
+      navigate(`/card/${props.data}`)
+   history.push({
+      pathname: '/card',
+      state: { },
+    });
+       console.log(props.data);
   }
   return (
     <div className={styles.card} onClick={cardOnClick}>
