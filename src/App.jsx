@@ -10,6 +10,7 @@ import FullCard from "./components/home/FullCard";
 import Navbar from "./components/home/navBar";
 import Footer from "./components/home/footer";
 import UserDetails from "./components/userDetails/usetDetails";
+import CardDetailsForm from "./components/cardDetails/cardDetails";
 
 function App() {
 	return (
@@ -24,9 +25,14 @@ function App() {
 							element={<LoginForm />}
 						/>
 						<Route
-							path='/'
+							path='/usetDetails'
 							exact
 							element={<UserDetails />}
+						/>
+						<Route
+							path='/'
+							exact
+							element={<CardDetailsForm />}
 						/>
 						<Route
 							path='/signUp'
