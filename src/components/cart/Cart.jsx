@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams,useLocation  } from "react-router-dom";
 
 export default function Cart() {
-    const [items, setitems] = useState(null)
-    const navigate=useNavigate()
- const getCartItems = async () => {
+  const [items, setitems] = useState([])
+  const navigate=useNavigate()
+   const getCartItems = async () => {
     try {
      const token= localStorage.getItem("token");
       const response = await fetch('http://localhost:5000/users/cart-items', {

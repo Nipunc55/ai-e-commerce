@@ -1,6 +1,6 @@
 .grid_container {
 	display: flex;
-	margin:10%;
+	margin:0;
 	border: 1px solid rgba(95, 94, 94, 0.507);
 }
 .login_container {

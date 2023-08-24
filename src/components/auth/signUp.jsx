@@ -28,7 +28,7 @@ const SignupForm = () => {
 				body: JSON.stringify(formData),
 			});
 			const data = await response.json();
-			console.log(data.message);
+			console.log(data);
 
 			if (response.ok) {
 				navigate("/home");
@@ -51,7 +51,7 @@ const SignupForm = () => {
 			</div>
 
 			<div className='login_container '>
-			<form className='form-container'>
+			<form className='form-container' onSubmit={handleSubmit}>
 				<h1 className='h1-signUp'>SignUp</h1>
 				{/* 2 column grid layout with text inputs for the first and last names */}
 				<div className='row mb-4'>
@@ -110,6 +110,7 @@ const SignupForm = () => {
 
 				{/* Submit button */}
 				<button
+				   
 					type='submit'
 					className='btn signup-btn mb-4'>
 					Sign up
