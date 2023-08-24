@@ -1,5 +1,6 @@
 .card_container {
 	padding: 20px 300px 20px 300px;
+	height: 90vh;
 }
 .h1-card {
 	letter-spacing: 0rem;
@@ -24,4 +25,7 @@
 	color: red; /* Set text color to red */
 	font-size: 14px;
 	margin-top: 5px;
+}
+.mb4{
+	margin: 10px;
 }

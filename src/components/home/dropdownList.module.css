@@ -10,13 +10,13 @@
 .items {
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.123);
-  color: rgb(255, 255, 255);
-  border: 1px solid rgba(255, 255, 255, 0.596);
+  background-color: var(--sub-color);
+  color: var(--text-color);
+  border: 1px solid var(--main-color);
 }
 .items_option {
-  background-color: rgba(255, 255, 255, 0.219) !important;
-  color: rgb(0, 0, 0);
+  background-color: var(--sub-color) !important;
+  color:var(--text-color);
 }
 
 @media (min-width: 441px) and (max-width: 990px) {

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './cardDetails.module.css';
-
+import CheckoutModal from '../popUpModel/PopUp';
+import { useNavigate, useParams,useLocation  } from "react-router-dom";
 const CardDetailsForm = () => {
+    const navigate=useNavigate()
+     const [modalShow, setModalShow] = useState(false);
     const initialValues = {
         cardNumber: '',
         cardName: '',
@@ -20,17 +23,32 @@ const CardDetailsForm = () => {
 
     const handleSubmit = (values) => {
         // form submission logic
+        
+        handleCheckout()
     };
+   
+
+  const handleModalClose = () => {
+    setModalShow(false);
+    navigate('/home')
+  };
+
+  const handleCheckout = () => {
+    // Perform checkout logic here
+    setModalShow(true);
+  };
+
 
     return (
         <div className={styles.card_container}>
         <Formik
+        className='form-group'
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
         >
             <Form className={styles.card_form}>
-                <h1 className={`${styles['h1-card']} ${styles.heading}`}>Card Details</h1>
+                <h1 className={`${styles['h1-card']} ${styles.heading} text`}>Card Details</h1>
 
                 <div className={`${styles['cardform-outline']} ${styles.mb4}`}>
                     <Field
@@ -98,6 +116,7 @@ const CardDetailsForm = () => {
                 </div>
             </Form>
         </Formik>
+        <CheckoutModal show={modalShow} onClose={handleModalClose} />
         </div>
     );
 };

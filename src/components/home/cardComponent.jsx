@@ -27,9 +27,9 @@ const CardContainer = ({data}) => {
        
       </div>
       <div>
-        <h3 className={styles.card_title}>Item name with description</h3>
-        <h5>20$</h5>
-        <p className='card-text'>Free Shipping</p>
+        {/* <h3 className={styles.card_title}>Item name with description</h3>
+        <h5 className='text'>20$</h5>
+        <p className='card-text text'>Free Shipping</p> */}
       </div>
     </div>
   );

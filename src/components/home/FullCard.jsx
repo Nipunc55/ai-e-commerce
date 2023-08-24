@@ -1,12 +1,16 @@
 import { useNavigate, useParams,useLocation  } from "react-router-dom";
 import styles from "./cardComponent.module.css";
 
-import CardPopup from "./cardPopup";
+
+const dressSizes = ["Small", "Medium", "Large", "X-Large"];
 
 const FullCard = () => {
+  const navigate=useNavigate()
   const location = useLocation();
   const data = location.state.data;
-  
+ function addToCart(){
+  navigate('/cart')
+ }
   return (
     <div className={styles.full_card_container} >
       <div className={styles.card_container}>
@@ -25,11 +29,17 @@ const FullCard = () => {
           ))
         )}
       </div>
-      <div className={styles.description}>
-        <h3 className={styles.card_title}>Item name with description</h3>
-        <h5>20$</h5>
-        <p className='card-text'>Free Shipping</p>
-      </div>
+     <div className="form-group m-3">
+      <label className="mb-2  text" htmlFor="size">Select Dress Size:</label>
+      <select id="size" className="form-control input w-25">
+        {dressSizes.map((size, index) => (
+          <option key={index} value={size}>
+            {size}
+          </option>
+        ))}
+      </select>
+      <button className="btn btn-warning mt-2" onClick={addToCart}>Add To Cart</button>
+    </div>
     </div>
   );
 };

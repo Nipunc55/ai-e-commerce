@@ -1,7 +1,9 @@
 .user_container {
 	padding: 20px 300px 20px 300px;
+	height: 90vh;
 }
 .user_form {
+	padding: 10px;
 	background-color: azure;
 }
 .h1-login {

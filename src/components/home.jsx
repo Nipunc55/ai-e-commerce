@@ -53,7 +53,7 @@ function Home() {
 						GetItems(data);
 					}}
 				/>
-				{items.length>0 ?(<CardGrid itemList={items} />):(<div className="empty-card-grid">Serach...</div>)}
+				{items.length>0 ?(<CardGrid itemList={items} />):(<div className="empty-card-grid text">Serach...</div>)}
 				
 			</div>
 			

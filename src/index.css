@@ -5,47 +5,50 @@ body {
   background-image: linear-gradient(to bottom, rgb(35, 56, 68), rgb(35, 56, 68)ffffff);
 } */
 body {
+	
 	background: linear-gradient(
-		-45deg,
-		rgb(255, 255, 255) 0%,
-		rgb(237, 238, 240) 13%,
-		rgb(231, 235, 236) 25%,
-		rgb(223, 227, 230) 38%,
-		rgb(227, 231, 235) 50%,
-		rgb(217, 222, 226) 62%,
-		rgb(221, 226, 230) 75%,
-		rgb(216, 220, 223) 87%,
-		rgb(216, 219, 221) 100%
+		
+		var(--primary-color) 87%,
+		var(--main-color) 100%
 	);
 	background-size: 300% 400%;
-	animation: gradiant 25s ease infinite;
+	/* animation: gradiant 25s ease infinite; */
 	/* height: 100vh; */
 }
-
-@keyframes gradiant {
-	0% {
-		background-position: 0%;
-	}
-	50% {
-		background-position: 100%;
-	}
-	100% {
-		background-position: 0%;
-	}
+.text{
+	color: var(--text-color) !important;
 }
-
+.footer{
+	background-color: var(--secondary-color)!important;
+}
+select{
+	background-color: var(--sub-color)!important;
+	color: var(--text-color)!important;
+}
+option{
+	color: var(--text-color)!important;
+}
 h1 {
-	color: white;
+	color: var(--text-color);
 	font-family: Open Sans, sans-serif;
 	font-weight: 300;
 	font-size: 4rem;
 	letter-spacing: 2rem;
 }
 :root {
-	--primary-color: #080042;
-	/* Blue */
-	--main-color: rgb(65, 101, 112);
-	--secondary-color: #ffffff;
-	/* Gray */
-	--text-color: #000000;
+	
+	/* Dark Theme Colors - Blue and Cyan */
+		--primary-color: #09111e;
+		
+		--main-color: #00a6a6;
+		/* --main-color: #d4af37; */
+		--secondary-color: #005577;
+		
+		
+		--sub-color: #2c3e50;
+	
+		--text-color: #ffffff;
+		
+
+		
 }

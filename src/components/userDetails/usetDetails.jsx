@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import styles from "./UserDetails.module.css";
-
+import styles from "./userDetails.module.css";
+import { useNavigate, useParams,useLocation  } from "react-router-dom";
 const UserDetails = () => {
+	 const navigate=useNavigate()
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -19,15 +20,15 @@ const UserDetails = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		
+		navigate('/checkout-card-details')
 	};
 
 	return (
 		<div className={styles.user_container}>
 			<form
-				className={styles.user_form}
+				className="form-group"
 				onSubmit={handleSubmit}>
-				<h1 className={`${styles["h1-login"]} ${styles.heading}`}>Details</h1>
+				<h1 className={`${styles["h1-login"]} ${styles.heading} text`}>Details</h1>
 
 				{/* Name Input */}
 				<div className={`${styles["userform-outline"]} ${styles.mb4}`}>
@@ -40,7 +41,7 @@ const UserDetails = () => {
 						onChange={handleChange}
 					/>
 					<label
-						className={`${styles["userForm-label"]} ${styles.label}`}
+						className={`${styles["userForm-label"]} ${styles.label} text`}
 						htmlFor='form3Example3'>
 						Name
 					</label>
@@ -57,14 +58,14 @@ const UserDetails = () => {
 						onChange={handleChange}
 					/>
 					<label
-						className={`${styles["userForm-label"]} ${styles.label}`}
+						className={`${styles["userForm-label"]} ${styles.label} text`}
 						htmlFor='form3Example4'>
 						Email
 					</label>
 				</div>
 
 				{/* Phone Number Input */}
-				<div className={`${styles["userform-outline"]} ${styles.mb4}`}>
+				<div className={`${styles["userform-outline"]} ${styles.mb4} text`}>
 					<input
 						type='tel'
 						id='form3Example5'
@@ -74,7 +75,7 @@ const UserDetails = () => {
 						onChange={handleChange}
 					/>
 					<label
-						className={`${styles["userForm-label"]} ${styles.label}`}
+						className={`${styles["userForm-label"]} ${styles.label} text`}
 						htmlFor='form3Example5'>
 						Phone Number
 					</label>
@@ -91,7 +92,7 @@ const UserDetails = () => {
 						onChange={handleChange}
 					/>
 					<label
-						className={`${styles["userForm-label"]} ${styles.label}`}
+						className={`${styles["userForm-label"]} ${styles.label} text`}
 						htmlFor='form3Example6'>
 						Address
 					</label>
