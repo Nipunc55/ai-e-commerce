@@ -123,17 +123,11 @@ const HorizontalDropdowns = ({onSelect}) => {
           >
             Type
           </option>
-          <option className={styles.items_option} value='night'>
-            Night
+          <option className={styles.items_option} value='Casual'>
+            Casual
           </option>
-          <option className={styles.items_option} value='morning'>
-            Morning
-          </option>
-          <option className={styles.items_option} value='evening'>
-            Evening
-          </option>
-          <option className={styles.items_option} value='noon'>
-            Noon
+          <option className={styles.items_option} value='Formal'>
+            Formal
           </option>
         </select>
 

@@ -28,11 +28,43 @@ const CardDetailsForm = () => {
 		phoneNumber: Yup.string().required("Phone number is required"),
 		address: Yup.string().required("Address is required"),
 	});
+	
+const completeCheckout = async () => {
+    try {
+     const token= localStorage.getItem("token");
+      const response = await fetch('http://localhost:5000/users/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          // You might need to include additional headers like authentication
+        },
+        body: JSON.stringify({  "mail":"nipunchathuranga45@gmail.com",
+      "productDetails":{"name":"shirt","price":"100$"
+
+      } }),
+      });
+     
+
+      if (response.ok) {
+        // const succes = await response.json();
+        // console.log('Cart items:', cartItems);
+        alert("items checkout successfully...")
+        setModalShow(true);
+        // You can update the UI or state with the updated cart items here
+      } else {
+        console.error('Failed to complete checkout!');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+	
 
 	const handleSubmit = (values) => {
 		// form submission logic
 
-		handleCheckout();
+		completeCheckout();
 	};
 
 	const handleModalClose = () => {
@@ -40,10 +72,7 @@ const CardDetailsForm = () => {
 		navigate("/home");
 	};
 
-	const handleCheckout = () => {
-		// Perform checkout logic here
-		setModalShow(true);
-	};
+	
 
 	return (
 		<div className={styles.card_container}>

@@ -11,18 +11,17 @@ function Home() {
 	async function GetItems(data) {
 		const baseUrl = "http://127.0.0.1:8000/predict";
 		const {
-			text = "i want to participate to wedding at night",
+			text = "i want to participate",
 			color = "white",
-			type = "wedding",
-			situation = "morning",
+			type = "Casual",
 			categories = "t-shirt",
 			gender = "male",
 		} = data;
 		
-		console.log(`${type}/${color}/${situation}/${gender}/${categories}`);
+		console.log(`/${text}/${color}/${gender}/${type}/${categories}`);
 		try {
 			const response = await fetch(
-				`${baseUrl}/${type}/${color}/${situation}/${gender}/${categories},skirt,blouse,shirt,frog`,
+				`${baseUrl}/${text}/${color}/${gender}/${type}/${categories}`,
 				{
 					method: "GET",
 					headers: {

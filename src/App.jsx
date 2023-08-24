@@ -32,11 +32,7 @@ function App() {
 							exact
 							element={<LoginForm />}
 						/>
-            {/* <Route
-							path='/'
-							exact
-							element={<CardDetailsForm />}
-						/> */}
+           
 						<Route
 							path='/signUp'
 							element={<SignupForm />}
@@ -49,7 +45,7 @@ function App() {
 							path='/card'
 							element={<FullCard />}
 						/>
-            <Route
+                        <Route
 							path='/cart'
 							element={<Cart />}
 						/>

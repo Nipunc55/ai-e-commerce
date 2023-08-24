@@ -49,7 +49,7 @@ export default function Cart() {
 
   return (
     <div className='card_container'>
-          {items ? (<>{
+          {items.length>0 ? (<>{
 
            items.map((obj,index)=>(
             <div key={index} className='full_card m-2'>

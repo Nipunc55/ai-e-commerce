@@ -6,19 +6,20 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 export const DropDownInput = createContext();
 
 const SearchBar = ({ GetItems }) => {
-	const [userInput, setUserInput] = useState("");
+	const [userInput, setSearchBarInput] = useState("");
 	const [selectedOptions, setSelectedOptions] = useState(
 		''
 	);
-	useEffect(() => {
-	  console.log(selectedOptions);
-	}, [selectedOptions])
+	
 	
 
-	const handleInputChange = (event) => {
-		setUserInput(event.target.value);
+	const handleSearchBarInput = (event) => {
+		setSearchBarInput(event.target.value);
+	
+		const serachData = { ...selectedOptions, text: userInput};
+		setSelectedOptions(serachData);
 
-		console.log(event.target.value);
+		// console.log(event.target.value);
 	};
 	const onDropDownSelect = () => {
 		const serachData = { ...selectedOptions, text: userInput };
@@ -31,8 +32,9 @@ const SearchBar = ({ GetItems }) => {
 					<input
 						type='search'
 						id='form1'
+						onChange={handleSearchBarInput}
 						className={styles.form_control}
-						placeholder='Search here...'
+						placeholder='I want ...'
 					/>
 					<label
 						className={styles.form_label}
