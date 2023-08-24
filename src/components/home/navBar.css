@@ -12,3 +12,7 @@
 .nav-link{
 	color:var(--text-color) !important;
 }
+.nav-img{
+ height: 20px!important;
+ width: 20px;
+}

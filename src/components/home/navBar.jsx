@@ -26,6 +26,7 @@ function Navbar() {
 						id='navbarLeftAlignExample'>
 						{/* Left links */}
 						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+							<img style={{width: '90px', height: '40px' ,  borderRadius: '10px',}} className="nav-img" src="/images/logo.png"></img>
 							<li className='nav-item'>
 								<a
 									className='nav-link active text'
