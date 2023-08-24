@@ -1,14 +1,61 @@
 import { useNavigate, useParams,useLocation  } from "react-router-dom";
 import styles from "./cardComponent.module.css";
+import { useState } from "react";
 
 
 const dressSizes = ["Small", "Medium", "Large", "X-Large"];
 
 const FullCard = () => {
+  
+  const [productIds, setProductIds] = useState([]);
   const navigate=useNavigate()
   const location = useLocation();
   const data = location.state.data;
+
+
+  const handleCheckboxChange = (event) => {
+    console.log(productIds);
+    const selectedProductId = event.target.value;
+    if (event.target.checked) {
+      setProductIds((prevProductIds) => [...prevProductIds, selectedProductId]);
+    } else {
+      setProductIds((prevProductIds) =>
+        prevProductIds.filter((id) => id !== selectedProductId)
+      );
+    }
+  };
+
+ const handleAddToCart = async () => {
+    try {
+     const token= localStorage.getItem("token");
+      const response = await fetch('http://localhost:5000/users/add-to-cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          // You might need to include additional headers like authentication
+        },
+        body: JSON.stringify({ productIds }),
+      });
+     
+
+      if (response.ok) {
+        const cartItems = await response.json();
+        console.log('Cart items:', cartItems);
+        alert("items added successfully...")
+        navigate('/cart')
+        // You can update the UI or state with the updated cart items here
+      } else {
+        console.error('Failed to add to cart');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
  function addToCart(){
+
+
   navigate('/cart')
  }
   return (
@@ -24,7 +71,7 @@ const FullCard = () => {
               className='img-fluid'
               
             />
-            <input type="checkbox" name="option1" value="value1"></input>
+            <input type="checkbox" name="option1" onChange={handleCheckboxChange} value={`${data[key]}`}></input>
             </div>
           ))
         )}
@@ -38,7 +85,7 @@ const FullCard = () => {
           </option>
         ))}
       </select>
-      <button className="btn btn-warning mt-2" onClick={addToCart}>Add To Cart</button>
+      <button className="btn btn-warning mt-2" onClick={handleAddToCart}>Add To Cart</button>
     </div>
     </div>
   );

@@ -4,15 +4,42 @@ import { useNavigate, useParams,useLocation  } from "react-router-dom";
 export default function Cart() {
     const [items, setitems] = useState(null)
     const navigate=useNavigate()
+ const getCartItems = async () => {
+    try {
+     const token= localStorage.getItem("token");
+      const response = await fetch('http://localhost:5000/users/cart-items', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          // You might need to include additional headers like authentication
+        },
+        
+      });
+     
+
+      if (response.ok) {
+        const cartItems = await response.json();
+        console.log('Cart items:', cartItems);
+       setitems(cartItems)
+        // You can update the UI or state with the updated cart items here
+      } else {
+        console.error('Failed to add to cart');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
      useEffect(() => {
-       
-     setitems({
-        "t-shirt": "3-piece-full-suite (24).jpg",
-        "skirt": "3-piece-full-suite (24).jpg",
-        "blouse": "3-piece-full-suite (24).jpg",
-        "shirt": "3-piece-full-suite (24).jpg",
-        "frog": "3-piece-full-suite (24).jpg"
-    })
+       getCartItems()
+    //  setitems({
+    //     "t-shirt": "3-piece-full-suite (24).jpg",
+    //     "skirt": "3-piece-full-suite (24).jpg",
+    //     "blouse": "3-piece-full-suite (24).jpg",
+    //     "shirt": "3-piece-full-suite (24).jpg",
+    //     "frog": "3-piece-full-suite (24).jpg"
+    // })
       
      }, [])
      function checkout(){
@@ -24,12 +51,12 @@ export default function Cart() {
     <div className='card_container'>
           {items ? (<>{
 
-           Object.keys(items).map((key)=>(
-            <div key={key} className='full_card m-2'>
+           items.map((obj,index)=>(
+            <div key={index} className='full_card m-2'>
              <img
-              key={key}
-              src={`/images/dataset/${items[key]}`}
-              alt={key}
+              key={index}
+              src={`/images/dataset/${obj.productId}`}
+              alt={index}
               className='img-fluid'
               
             />
