@@ -54,8 +54,8 @@ function App() {
 							element={<Cart />}
 						/>
             
-             <Route
-							path='/checkout-card-details'
+                       <Route
+							path='/checkout-user-details'
 							element={<CardDetailsForm />}
 						/>
 					</Routes>

@@ -4,8 +4,16 @@ import styles from "./dropdownList.module.css";
 import { DropDownInput } from './searchBar';
 
 
-const categories=["Dress","Heels","Hoodie","Jeans","Shoes","T-Shirt","Top","Shirt","Trousers","Skirt","Sunglass","Watch"]
-
+const categories=["2-Piece_Suit",
+"3-Piece_Suit","Dress","Heels","Hoodie","Jeans","Shoes","T-Shirt","Top","Shirt","Trousers","Skirt","Sunglass","Watch"]
+const colors=["Black","Red","Gray","Blue","White","Purple","Beige","Pink","Brown","Olive",
+"Cyan",
+"green",
+"Yellow",
+"Gold",
+"Silver",
+"Ash",
+"Orange"]
 const HorizontalDropdowns = ({onSelect}) => {
    const { selectedOptions, setSelectedOptions } = useContext(DropDownInput);
  
@@ -72,36 +80,21 @@ const HorizontalDropdowns = ({onSelect}) => {
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'color')}>
           <option
             className={styles.items_option}
-            defaultValue=''
+            defaultValue='Colors'
             disabled
             
           >
             Colors
           </option>
-          <option className={styles.items_option} value='red'>
-            Red
+          {colors.map((color,index)=>{
+          return <option key={index} className={styles.items_option} value={`${color}`}>
+           {color}
           </option>
-          <option className={styles.items_option} value='blue'>
-            Blue
-          </option>
-          <option className={styles.items_option} value='green'>
-            Green
-          </option>
-          <option className={styles.items_option} value='black'>
-            Black
-          </option>
-          <option className={styles.items_option} value='item4'>
-            White
-          </option>
-          <option className={styles.items_option} value='item4'>
-            Yellow
-          </option>
-          <option className={styles.items_option} value='item4'>
-            Pink
-          </option>
-          <option className={styles.items_option} value='item4'>
-            Purple
-          </option>
+         
+
+          })}
+          
+         
         </select>
 
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'gender')}>
