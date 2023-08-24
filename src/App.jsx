@@ -9,7 +9,6 @@ import Home from "./components/home";
 import FullCard from "./components/home/FullCard";
 import Navbar from "./components/home/navBar";
 import Footer from "./components/home/footer";
-import UserDetails from "./components/userDetails/usetDetails";
 import CardDetailsForm from "./components/cardDetails/cardDetails";
 import Cart from "./components/cart/Cart";
 
@@ -27,18 +26,14 @@ function App() {
 							exact
 							element={<LoginForm />}
 						/>
-						<Route
-							path='/usetDetails'
-							exact
-							element={<UserDetails />}
-						/>
-						<Route
+						
+						{/* <Route
 							path='/'
 							exact
 							element={<LoginForm />}
-						/>
+						/> */}
             <Route
-							path='/card-details'
+							path='/'
 							exact
 							element={<CardDetailsForm />}
 						/>
@@ -58,10 +53,7 @@ function App() {
 							path='/cart'
 							element={<Cart />}
 						/>
-            <Route
-							path='/checkout-user-details'
-							element={<UserDetails />}
-						/>
+            
              <Route
 							path='/checkout-card-details'
 							element={<CardDetailsForm />}

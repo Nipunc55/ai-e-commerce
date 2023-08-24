@@ -5,6 +5,13 @@
 .h1-card {
 	letter-spacing: 0rem;
 }
+.row-with-inline {
+	display: flex;
+}
+.cardform-outline {
+	flex: 1;
+	margin-right: 5px;
+}
 .submit-btn {
 	border: 2px solid rgb(65, 101, 112);
 	border-radius: 20px;
@@ -26,6 +33,6 @@
 	font-size: 14px;
 	margin-top: 5px;
 }
-.mb4{
+.mb4 {
 	margin: 10px;
 }
