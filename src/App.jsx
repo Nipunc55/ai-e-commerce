@@ -27,16 +27,16 @@ function App() {
 							element={<LoginForm />}
 						/>
 						
-						{/* <Route
+						<Route
 							path='/'
 							exact
 							element={<LoginForm />}
-						/> */}
-            <Route
+						/>
+            {/* <Route
 							path='/'
 							exact
 							element={<CardDetailsForm />}
-						/>
+						/> */}
 						<Route
 							path='/signUp'
 							element={<SignupForm />}

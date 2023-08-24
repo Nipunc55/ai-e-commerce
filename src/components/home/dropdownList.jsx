@@ -2,10 +2,32 @@ import React, { useState,useContext } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dropdownList.module.css";
 import { DropDownInput } from './searchBar';
+import Select from 'react-select'
+
+const categories=["Dress","Heels","Hoodie","Jeans","Shoes","T-Shirt","Top","Shirt","Trousers","Skirt","Sunglass","Watch"]
 
 const HorizontalDropdowns = ({onSelect}) => {
    const { selectedOptions, setSelectedOptions } = useContext(DropDownInput);
  
+ const [selectedCatogeries, setSelectedCatogeries] = useState([]);
+
+  const handleCheckboxChange = (option) => {
+  
+    if (selectedCatogeries.includes(option)) {
+      setSelectedCatogeries(selectedCatogeries.filter((item) => item != option));
+    } else {
+      setSelectedCatogeries([...selectedCatogeries, option]);
+    }
+    updateInputdata(selectedCatogeries,"categories")
+  };
+  const updateInputdata = (value, dropdownName) => {
+    const newSelectedOptions= {...selectedOptions,
+      [dropdownName]: value,}
+   
+    setSelectedOptions(newSelectedOptions)
+    
+    console.log(newSelectedOptions);
+  };
 
   const handleDropdownChange = (event, dropdownName) => {
     const newSelectedOptions= {...selectedOptions,
@@ -18,7 +40,7 @@ const HorizontalDropdowns = ({onSelect}) => {
   return (
     <div className={styles.dropdownList_container}>
       <div className={styles.dropdownGrid}>
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
+        {/* <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'situations')}>
           <option
             className={styles.items_option}
             defaultValue='item1'
@@ -45,7 +67,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           <option className={styles.items_option} value='item7'>
             Outdoor
           </option>
-        </select>
+        </select> */}
 
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'color')}>
           <option
@@ -96,19 +118,17 @@ const HorizontalDropdowns = ({onSelect}) => {
           <option className={styles.items_option} value='female'>
             Female
           </option>
-          <option className={styles.items_option} value='unisex'>
-            Unisex
-          </option>
+         
         </select>
 
         <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'type')}>
           <option
             className={styles.items_option}
-            defaultValue='times'
+            defaultValue='Type'
             disabled
             
           >
-            Times
+            Type
           </option>
           <option className={styles.items_option} value='night'>
             Night
@@ -124,7 +144,7 @@ const HorizontalDropdowns = ({onSelect}) => {
           </option>
         </select>
 
-        <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'categories')}>
+        {/* <select className={styles.items} onChange={(e) => handleDropdownChange(e, 'categories')}>
           <option
             className={styles.items_option}
             defaultValue=''
@@ -184,8 +204,25 @@ const HorizontalDropdowns = ({onSelect}) => {
           <option className={styles.items_option} value='tie'>
             Tie
           </option>
-        </select>
+        </select> */}
+
+  
+      
       </div>
+      <div className={styles.checkBox_container}>
+       {categories.map((option) => (
+        <label key={option}>
+          <input
+          className={styles.check_box}
+            type="checkbox"
+            value={option}
+            checked={selectedCatogeries.includes(option)}
+            onChange={() => handleCheckboxChange(option)}
+          />
+          {option}
+        </label>
+      ))}
+      </div>  
     </div>
   );
 };

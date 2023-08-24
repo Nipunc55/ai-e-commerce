@@ -4,7 +4,7 @@
 }
 .dropdownGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   grid-gap: 10px;
 }
 .items {
@@ -18,7 +18,22 @@
   background-color: var(--sub-color) !important;
   color:var(--text-color);
 }
-
+.check_box{
+  
+  padding: 5px;
+  background-color: var(--sub-color) !important;
+    color: var(--text-color);
+}
+.checkBox_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--sub-color);
+  color: var(--text-color);
+  border: 1px solid var(--main-color);
+}
 @media (min-width: 441px) and (max-width: 990px) {
   .items {
     padding: 5px;
