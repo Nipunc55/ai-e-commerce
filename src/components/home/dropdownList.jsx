@@ -2,7 +2,7 @@ import React, { useState,useContext } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dropdownList.module.css";
 import { DropDownInput } from './searchBar';
-import Select from 'react-select'
+
 
 const categories=["Dress","Heels","Hoodie","Jeans","Shoes","T-Shirt","Top","Shirt","Trousers","Skirt","Sunglass","Watch"]
 
