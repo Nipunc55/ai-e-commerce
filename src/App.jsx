@@ -40,11 +40,11 @@ function App() {
 							exact
 							element={<ContactUs />}
 						/>
-						{/* <Route
+						<Route
 							path='/'
 							exact
 							element={<LoginForm />}
-						/>  */}
+						/> 
 						<Route
 							path='/aboutUs'
 							exact
@@ -68,7 +68,7 @@ function App() {
 						/>
 
 						<Route
-							path='/'
+							path='/cardDetails'
 							element={<CardDetailsForm />}
 						/>
 					</Routes>
