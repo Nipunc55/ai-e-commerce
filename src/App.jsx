@@ -18,65 +18,55 @@ import ContactUs from "./components/contactUs/contactUs";
 
 
 function App() {
-	return (
-		<>
-			<div
-				className='main-container'
-				style={{
-					backgroundImage: `url(${homeImage})`,
-					backgroundRepeat: "no-repeat",
-					backgroundSize: "100%",
-				}}>
-				<Navbar />
-				<Router>
-					<Routes>
-						<Route
-							path='/logIn'
-							exact
-							element={<LoginForm />}
-						/>
-						<Route
-							path='/contactUs'
-							exact
-							element={<ContactUs />}
-						/>
-						<Route
-							path='/'
-							exact
-							element={<LoginForm />}
-						/> 
-						<Route
-							path='/aboutUs'
-							exact
-							element={<AboutUs />}
-						/>
-						<Route
-							path='/signUp'
-							element={<SignupForm />}
-						/>
-						<Route
-							path='/home'
-							element={<Home />}
-						/>
-						<Route
-							path='/card'
-							element={<FullCard />}
-						/>
-						<Route
-							path='/cart'
-							element={<Cart />}
-						/>
+  const hideNavbarPaths = ["/logIn", "/signUp"];
 
-						<Route
-							path='/cardDetails'
-							element={<CardDetailsForm />}
-						/>
-					</Routes>
-				</Router>
-				{/* <Footer /> */}
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div
+        className="main-container"
+        style={{
+          backgroundImage: `url(${homeImage})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100%",
+        }}
+      >
+        <Router>
+          <Routes>
+            <Route path="/logIn" element={<LoginForm />} />
+            {/* <Route path="/contactUs" element={<ContactUs />} /> */}
+            <Route path="/" element={<LoginForm />} />
+            {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
+            <Route path="/signUp" element={<SignupForm />} />
+            <Route
+              path="/*"
+              element={<MainContent hideNavbarPaths={hideNavbarPaths} />}
+            />
+          </Routes>
+        </Router>
+        {/* <Footer /> */}
+      </div>
+    </>
+  );
+}
+
+function MainContent({ hideNavbarPaths }) {
+  const currentPath = window.location.pathname;
+
+  const shouldHideNavbar = hideNavbarPaths.includes(currentPath);
+
+  return (
+    <>
+      {!shouldHideNavbar && <Navbar />}
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/card" element={<FullCard />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout-user-details" element={<CardDetailsForm />} />
+		    <Route path="/contactUs" element={<ContactUs />} />
+		    <Route path="/aboutUs" element={<AboutUs />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

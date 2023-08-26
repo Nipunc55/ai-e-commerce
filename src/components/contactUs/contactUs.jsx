@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./contactUs.css";
+import "./contactUs.css";
 import contactUsImage from "../../assets/images/contactUs.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TextField from "@mui/material/TextField";

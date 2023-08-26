@@ -68,7 +68,7 @@ const LoginForm = () => {
 
 					{/* Email input */}
 					<div className='loginform-outline mb-4'>
-						<TextField fullWidth label="Email Address" id="fullWidth" />
+						<TextField fullWidth label="Email Address" name="email" id="fullWidth" onChange={handleChange} />
 					</div>
 
 					{/* Password input */}
@@ -80,6 +80,8 @@ const LoginForm = () => {
 								Password
 							</InputLabel>
 							<OutlinedInput
+							    onChange={handleChange}
+							    name="password"
 								id='outlined-adornment-password fullWidth'
 								type={showPassword ? "text" : "password"}
 								endAdornment={

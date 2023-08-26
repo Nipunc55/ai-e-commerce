@@ -4,14 +4,21 @@
 	height: 100%;
 }
 .signup_container {
-	padding: 5% 30% 3% 30%;
-	background-repeat: no-repeat;
-	background-position: bottom;
-	background-size: 100%;
+		display: flex;
+			align-items: center;
+			justify-content: center;
+			/* padding: 5% 30% 5% 30%; */
+			background-repeat: no-repeat;
+			/* background-position: bottom; */
+			background-size: cover;
+			height: 100vh;
 }
 .form-container {
-	padding: 10% 2% 10% 2%;
-	background-color: rgba(255, 255, 255, 0.548);
+	width: 50%;
+		height: 90%;
+	
+		padding: 10% 2% 15% 2%;
+		background-color: rgba(255, 255, 255, 0.692);
 }
 .h1-signUp {
 	color: val(--text-color);

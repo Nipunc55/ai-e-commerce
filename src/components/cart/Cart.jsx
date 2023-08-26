@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams,useLocation  } from "react-router-dom";
-
+import './Cart.css'
 export default function Cart() {
   const [items, setitems] = useState([])
   const navigate=useNavigate()
@@ -32,12 +32,12 @@ export default function Cart() {
   };
 
      useEffect(() => {
-       getCartItems()
+     getCartItems()
     //  setitems({
-    //     "t-shirt": "3-piece-full-suite (24).jpg",
-    //     "skirt": "3-piece-full-suite (24).jpg",
-    //     "blouse": "3-piece-full-suite (24).jpg",
-    //     "shirt": "3-piece-full-suite (24).jpg",
+      
+        
+      
+    //     "productId": "3-piece-full-suite (24).jpg",
     //     "frog": "3-piece-full-suite (24).jpg"
     // })
       
@@ -48,7 +48,7 @@ export default function Cart() {
      }
 
   return (
-    <div className='card_container'>
+    <div className='cart_container' >
           {items.length>0 ? (<>{
 
            items.map((obj,index)=>(
