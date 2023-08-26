@@ -14,12 +14,13 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import TextField from '@mui/material/TextField';
-
+import SweetAlert2 from 'react-sweetalert2';
 
 
 
 
 const SignupForm = () => {
+	const [swalProps, setSwalProps] = useState({});
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		name: "",
@@ -57,6 +58,11 @@ const SignupForm = () => {
 			} else {
 				// Handle authentication error 
 				console.log(data.error);
+				 setSwalProps({
+                    show: true,
+                    title: 'SingUp Failed',
+                    text: `${data.error}`,
+                });
 			}
 		} catch (error) {
 			// Handle errors
@@ -67,7 +73,7 @@ const SignupForm = () => {
 	return (
 		
 		<div className='grid_container'>
-			
+			 <SweetAlert2 {...swalProps} />
 			<div className='signup_container' style={{ backgroundImage: `url(${signUpImage})` }}>
 			<form className='form-container' onSubmit={handleSubmit}>
 				<h1 className='h1-signUp'>SignUp</h1>

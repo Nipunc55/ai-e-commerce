@@ -6,9 +6,11 @@ import { useState } from "react";
 import homeImage from "../assets/images/home.jpg";
 import Navbar from "./home/navBar";
 import Footer from "./home/footer";
+import SweetAlert2 from 'react-sweetalert2';
 
 function Home() {
 	const [items, setItems] = useState([]);
+	const [swalProps, setSwalProps] = useState({});
 	async function GetItems(data) {
 		const baseUrl = "http://127.0.0.1:8000/predict";
 		const {
@@ -32,7 +34,12 @@ function Home() {
 			);
 
 			if (!response.ok) {
-				alert("no data found");
+				// alert("no data found");
+				setSwalProps({
+                    show: true,
+                    title: 'No items found !',
+                    text: 'Please try different key words...',
+                });
 			}
 
 			const data = await response.json();
@@ -47,7 +54,13 @@ function Home() {
 	return (
 		<>
 			<div className='container-sm'>
-				<div className='home-background' >
+				<div className='home-background' style={{
+          backgroundImage: `url(${homeImage})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundAttachment:"fixed",
+          height:"100%",
+        }} ><SweetAlert2 {...swalProps} />
 					<SearchBar
 						GetItems={(data) => {
 							GetItems(data);

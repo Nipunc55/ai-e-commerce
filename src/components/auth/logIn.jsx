@@ -12,8 +12,10 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import TextField from '@mui/material/TextField';
+import SweetAlert2 from 'react-sweetalert2';
 
 const LoginForm = () => {
+	 const [swalProps, setSwalProps] = useState({});
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		email: "",
@@ -50,6 +52,11 @@ const LoginForm = () => {
 				console.log("Authentication successful");
 			} else {
 				console.log("Authentication failed");
+				setSwalProps({
+                    show: true,
+                    title: 'Login Faild..',
+                    text: 'invalid credentials...',
+                });
 			}
 		} catch (error) {
 			// Handle  errors
@@ -58,6 +65,7 @@ const LoginForm = () => {
 	};
 	return (
 		<div className='grid_container'>
+			 <SweetAlert2 {...swalProps} />
 			<div
 				className='login_container'
 				style={{ backgroundImage: `url(${logInImage})` }}>

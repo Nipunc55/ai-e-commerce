@@ -6,8 +6,8 @@ body {
 } */
 body {
 	/* background-color: var(--primary-color) !important; */
-	background-color: #ffffff;
-	background-size: 300% 400%;
+	
+	/* background-size: 300% 400%; */
 	/* animation: gradiant 25s ease infinite; */
 	/* height: 100vh; */
 }
@@ -32,14 +32,24 @@ h1 {
 	letter-spacing: 2rem;
 }
 :root {
+	background-color: #EEA7AB;
 	/* Dark Theme Colors - Blue and Cyan */
-	--primary-color: #0c1c36;
+	/* --primary-color: #0c1c36;
 
 	--main-color: #00a6a6;
-	/* --main-color: #d4af37; */
+
 	--secondary-color: #005577;
 
 	--sub-color: #253341c5;
 
-	--text-color: #ffffff;
+	--text-color: #ffffff; */
+	--primary-color: #e91e63;
+		/* Darker Pink */
+		--main-color: #c2185b;
+		/* Pink */
+		--secondary-color: #880e4f;
+		/* Even Darker Pink */
+		--sub-color: #f48fb1c5;
+		/* Light Pink with Transparency */
+		--text-color: #ffffff;
 }

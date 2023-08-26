@@ -14,6 +14,7 @@ import Cart from "./components/cart/Cart";
 import AboutUs from "./components/aboutUs/aboutUs";
 import homeImage from "./assets/images/home.jpg"
 import ContactUs from "./components/contactUs/contactUs";
+import { Height } from "@mui/icons-material";
 
 
 
@@ -28,6 +29,8 @@ function App() {
           backgroundImage: `url(${homeImage})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "100%",
+          backgroundAttachment:"fixed",
+         height:"100vh"
         }}
       >
         <Router>
