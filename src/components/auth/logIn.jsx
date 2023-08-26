@@ -1,15 +1,30 @@
 import { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./logIn.css";
 import { useNavigate } from "react-router-dom";
 import logInImage from "../../assets/images/logIn.jpg";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import TextField from '@mui/material/TextField';
+
 const LoginForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
 	});
+	const [showPassword, setShowPassword] = React.useState(false);
+	const handleClickShowPassword = () => setShowPassword((show) => !show);
 
+	const handleMouseDownPassword = (event) => {
+		event.preventDefault();
+	};
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -53,36 +68,35 @@ const LoginForm = () => {
 
 					{/* Email input */}
 					<div className='loginform-outline mb-4'>
-						<input
-							type='email'
-							id='form3Example3'
-							className='form-control'
-							name={"email"}
-							value={formData.email}
-							onChange={handleChange}
-						/>
-						<label
-							className='loginform-label'
-							htmlFor='form3Example3'>
-							Email Address
-						</label>
+						<TextField fullWidth label="Email Address" id="fullWidth" />
 					</div>
 
 					{/* Password input */}
 					<div className='loginform-outline mb-4'>
-						<input
-							type='password'
-							id='form3Example4'
-							className='form-control'
-							name={"password"}
-							value={formData.password}
-							onChange={handleChange}
-						/>
-						<label
-							className='loginform-label'
-							htmlFor='form3Example4'>
-							Password
-						</label>
+						<FormControl
+							sx={{ m: 0, width: "100%" }}
+							variant='outlined' id="fullWidth">
+							<InputLabel htmlFor='outlined-adornment-password' id="fullWidth">
+								Password
+							</InputLabel>
+							<OutlinedInput
+								id='outlined-adornment-password fullWidth'
+								type={showPassword ? "text" : "password"}
+								endAdornment={
+									<InputAdornment position='end'>
+										<IconButton
+											aria-label='toggle password visibility'
+											onClick={handleClickShowPassword}
+											onMouseDown={handleMouseDownPassword}
+											edge='end'>
+											{showPassword ? <VisibilityOff /> : <Visibility />}
+										</IconButton>
+									</InputAdornment>
+								}
+								label='Password'
+								
+							/>
+						</FormControl>
 					</div>
 
 					{/* Submit button */}

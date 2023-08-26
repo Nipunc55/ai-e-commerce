@@ -1,9 +1,24 @@
 import { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./signUp.css";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import signUpImage from "../../assets/images/signUp.jpg"
+import "bootstrap/dist/css/bootstrap.min.css";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import TextField from '@mui/material/TextField';
+
+
+
+
+
 const SignupForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -11,6 +26,12 @@ const SignupForm = () => {
 		email: "",
 		password: "",
 	});
+	const [showPassword, setShowPassword] = React.useState(false);
+	const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+	const handleMouseDownPassword = (event) => {
+		event.preventDefault();
+	};
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -47,62 +68,47 @@ const SignupForm = () => {
 		
 		<div className='grid_container'>
 			
-			<div className='login_container' style={{ backgroundImage: `url(${signUpImage})` }}>
+			<div className='signup_container' style={{ backgroundImage: `url(${signUpImage})` }}>
 			<form className='form-container' onSubmit={handleSubmit}>
 				<h1 className='h1-signUp'>SignUp</h1>
-				{/* 2 column grid layout with text inputs for the first and last names */}
-				<div className='row mb-1'>
-					<div className='col'>
-						<div className='form-outline'>
-							<input
-								type='text'
-								id='form3Example1'
-								className='form-control'
-								name={"name"}
-								value={formData.name}
-								onChange={handleChange}
-							/>
-							<label
-								className='form-label'
-								htmlFor='form3Example1'>
-								First Name
-							</label>
+				
+			{/* name input */}
+						<div className='form-outline mb-1'>
+						<TextField fullWidth label="Name" id="fullWidth" />
 						</div>
-					</div>
-				</div>
+				
 
 				{/* Email input */}
 				<div className='form-outline mb-1'>
-					<input
-						type='email'
-						id='form3Example3'
-						className='form-control'
-						name={"email"}
-						value={formData.email}
-						onChange={handleChange}
-					/>
-					<label
-						className='form-label'
-						htmlFor='form3Example3'>
-						Email Address
-					</label>
+				<TextField fullWidth label="Email" id="fullWidth" />
 				</div>
 
 				{/* Password input */}
 				<div className='form-outline mb-4'>
-					<input
-						type='password'
-						id='form3Example4'
-						className='form-control'
-						name={"password"}
-						value={formData.password}
-						onChange={handleChange}
-					/>
-					<label
-						className='form-label'
-						htmlFor='form3Example4'>
-						Password
-					</label>
+				<FormControl
+							sx={{ m: 0, width: "100%" }}
+							variant='outlined' id="fullWidth">
+							<InputLabel htmlFor='outlined-adornment-password' id="fullWidth">
+								Password
+							</InputLabel>
+							<OutlinedInput
+								id='outlined-adornment-password fullWidth'
+								type={showPassword ? "text" : "password"}
+								endAdornment={
+									<InputAdornment position='end'>
+										<IconButton
+											aria-label='toggle password visibility'
+											onClick={handleClickShowPassword}
+											onMouseDown={handleMouseDownPassword}
+											edge='end'>
+											{showPassword ? <VisibilityOff /> : <Visibility />}
+										</IconButton>
+									</InputAdornment>
+								}
+								label='Password'
+								
+							/>
+						</FormControl>
 				</div>
 
 				{/* Submit button */}

@@ -26,17 +26,17 @@ function App() {
 							exact
 							element={<LoginForm />}
 						/>
-						{/* <Route
-							path='/'
-							exact
-							element={<ContactUs />}
-						/> */}
-
 						<Route
 							path='/'
 							exact
-							element={<LoginForm />}
+							element={<ContactUs />}
 						/>
+
+						{/* <Route
+							path='/'
+							exact
+							element={<LoginForm />}
+						/> */}
 						{/* <Route
 							path='/'
 							exact
