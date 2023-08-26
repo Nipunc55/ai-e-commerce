@@ -8,7 +8,7 @@ const categories=["2-Piece_Suit",
 "3-Piece_Suit","Dress","Heels","Hoodie","Jeans","Shoes","T-Shirt","Top","Shirt","Trousers","Skirt","Sunglass","Watch"]
 const colors=["Black","Red","Gray","Blue","White","Purple","Beige","Pink","Brown","Olive",
 "Cyan",
-"green",
+"Green",
 "Yellow",
 "Gold",
 "Silver",

@@ -149,7 +149,7 @@ const completeCheckout = async () => {
 
 
                     <h1 className={`${styles["h1-card"]} ${styles.heading} text`}>
-						User Details
+						Delivery Details
 					</h1>
 					{/* Add email field */}
 					<div className={`${styles["cardform-outline"]} ${styles.mb4}`}>

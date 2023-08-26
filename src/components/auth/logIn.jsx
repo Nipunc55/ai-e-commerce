@@ -37,7 +37,7 @@ const LoginForm = () => {
 				console.log("Authentication failed");
 			}
 		} catch (error) {
-			// Handle any network or other errors
+			// Handle  errors
 			console.error("Error occurred while calling the API", error);
 		}
 	};
@@ -66,7 +66,7 @@ const LoginForm = () => {
 						<label
 							className='loginform-label'
 							htmlFor='form3Example3'>
-							Email address
+							Email Address
 						</label>
 					</div>
 

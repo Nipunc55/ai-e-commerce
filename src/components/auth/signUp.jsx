@@ -34,11 +34,11 @@ const SignupForm = () => {
 				navigate("/home");
 				console.log(data.message);
 			} else {
-				// Handle authentication error here, e.g., show error message to the user
+				// Handle authentication error 
 				console.log(data.error);
 			}
 		} catch (error) {
-			// Handle any network or other errors
+			// Handle errors
 			console.error("Error occurred while calling the API", error);
 		}
 	};
@@ -68,7 +68,7 @@ const SignupForm = () => {
 							<label
 								className='form-label'
 								htmlFor='form3Example1'>
-								First name
+								First Name
 							</label>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ const SignupForm = () => {
 					<label
 						className='form-label'
 						htmlFor='form3Example3'>
-						Email address
+						Email Address
 					</label>
 				</div>
 
