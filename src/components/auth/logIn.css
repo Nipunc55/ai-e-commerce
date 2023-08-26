@@ -7,12 +7,14 @@
 	background-color: rgba(202, 201, 201, 0.795);
 	background-repeat: no-repeat;
 	background-position: bottom;
+	background-size: 100%;
 }
 .login-form {
-	padding: 8% 25% 10% 25%;
+	padding: 8% 30% 10% 30%;
 }
 .h1-login {
 	color: val(--text-color);
+
 }
 .login-btn {
 	border: 2px solid rgb(65, 101, 112);

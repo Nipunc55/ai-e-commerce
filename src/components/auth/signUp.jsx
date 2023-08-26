@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./signUp.css";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
-import signImage from "../../assets/images/sign.png"
+import signUpImage from "../../assets/images/signUp.jpg"
 const SignupForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ const SignupForm = () => {
 		
 		<div className='grid_container'>
 			
-			<div className='login_container' style={{ backgroundImage: `url(${signImage})` }}>
+			<div className='login_container' style={{ backgroundImage: `url(${signUpImage})` }}>
 			<form className='form-container' onSubmit={handleSubmit}>
 				<h1 className='h1-signUp'>SignUp</h1>
 				{/* 2 column grid layout with text inputs for the first and last names */}

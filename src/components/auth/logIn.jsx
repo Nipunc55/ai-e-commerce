@@ -2,7 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./logIn.css";
 import { useNavigate } from "react-router-dom";
-import signImage from "../../assets/images/sign.png";
+import logInImage from "../../assets/images/logIn.jpg";
 const LoginForm = () => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
@@ -45,7 +45,7 @@ const LoginForm = () => {
 		<div className='grid_container'>
 			<div
 				className='login_container'
-				style={{ backgroundImage: `url(${signImage})` }}>
+				style={{ backgroundImage: `url(${logInImage})` }}>
 				<form
 					className='login-form'
 					onSubmit={handleSubmit}>

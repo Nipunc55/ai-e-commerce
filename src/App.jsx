@@ -11,10 +11,10 @@ import Navbar from "./components/home/navBar";
 import Footer from "./components/home/footer";
 import CardDetailsForm from "./components/cardDetails/cardDetails";
 import Cart from "./components/cart/Cart";
+import AboutUs from "./components/aboutUs/aboutUs";
+import ContactUs from "./components/contactUs/contactUs";
 
 function App() {
-
-  
 	return (
 		<>
 			<div className='main-container'>
@@ -26,13 +26,22 @@ function App() {
 							exact
 							element={<LoginForm />}
 						/>
-						
+						{/* <Route
+							path='/'
+							exact
+							element={<ContactUs />}
+						/> */}
+
 						<Route
 							path='/'
 							exact
 							element={<LoginForm />}
 						/>
-           
+						{/* <Route
+							path='/'
+							exact
+							element={<AboutUs />}
+						/> */}
 						<Route
 							path='/signUp'
 							element={<SignupForm />}
@@ -45,12 +54,12 @@ function App() {
 							path='/card'
 							element={<FullCard />}
 						/>
-                        <Route
+						<Route
 							path='/cart'
 							element={<Cart />}
 						/>
-            
-                       <Route
+
+						<Route
 							path='/checkout-user-details'
 							element={<CardDetailsForm />}
 						/>
