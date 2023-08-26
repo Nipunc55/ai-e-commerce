@@ -79,8 +79,7 @@ const HorizontalDropdowns = ({ onSelect }) => {
 					onChange={(e) => handleDropdownChange(e, "color")}>
 					<option
 						className={styles.items_option}
-						defaultValue='Colors'
-						>
+						defaultValue='Colors'>
 						Colors
 					</option>
 					{colors.map((color, index) => {
@@ -121,8 +120,7 @@ const HorizontalDropdowns = ({ onSelect }) => {
 					onChange={(e) => handleDropdownChange(e, "type")}>
 					<option
 						className={styles.items_option}
-						defaultValue='Type'
-						>
+						defaultValue='Type'>
 						Type
 					</option>
 					<option
@@ -199,9 +197,28 @@ const HorizontalDropdowns = ({ onSelect }) => {
           </option>
         </select> */}
 			</div>
+			{/* <div className={`d-flex flex-column ${styles.checkBox_container}`}>
+				{categories.map((option) => (
+					<label
+						key={option}
+						className={`d-flex align-items-center mb-2`}>
+						<input
+							className={`form-check-input ${styles.check_box}`}
+							type='checkbox'
+							value={option}
+							checked={selectedCatogeries.includes(option)}
+							onChange={() => handleCheckboxChange(option)}
+						/>
+						<span className='mx-2'>{option}</span>
+					</label>
+				))}
+			</div> */}
+
 			<div className={styles.checkBox_container}>
 				{categories.map((option) => (
-					<label key={option}>
+					<label
+						key={option}
+						className={`custom-dropdown ${styles.dropdown_label}`}>
 						<input
 							className={styles.check_box}
 							type='checkbox'
@@ -209,7 +226,9 @@ const HorizontalDropdowns = ({ onSelect }) => {
 							checked={selectedCatogeries.includes(option)}
 							onChange={() => handleCheckboxChange(option)}
 						/>
-						{option}
+						<span className={`mx-2 ${styles.checkbox_label_text}`}>
+							{option}
+						</span>
 					</label>
 				))}
 			</div>

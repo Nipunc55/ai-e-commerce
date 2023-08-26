@@ -17,7 +17,7 @@
 }
 .contactUs-form button {
 	padding: 6px 40px 6px 40px;
-	background-color: #000000;
+	background-color: var(--primary-color) ;
 	color: #fff;
 	border: none;
 	border-radius: 20px;
@@ -28,7 +28,7 @@
 
 .contactUs-form button:hover {
 	background-color: #ffffff;
-	color: #000000;
+	color:  var(--primary-color);
 	font-weight: 800;
-	border: 2px solid rgb(0, 0, 0);
+	border: 2px solid  var(--primary-color);
 }

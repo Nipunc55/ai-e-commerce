@@ -82,9 +82,9 @@ const completeCheckout = async () => {
 				validationSchema={validationSchema}
 				onSubmit={handleSubmit}>
 				<Form className={styles.card_form}>
-					<h1 className={`${styles["h1-card"]} ${styles.heading} text`}>
+					<h2 className={`${styles["h2-card"]} ${styles.heading} text`}>
 						Card Details
-					</h1>
+					</h2>
 					{/* Add card number field */}
 					<div className={`${styles["cardform-outline"]} ${styles.mb4}`}>
 						<Field
@@ -148,9 +148,9 @@ const completeCheckout = async () => {
 					</div>
 
 
-                    <h1 className={`${styles["h1-card"]} ${styles.heading} text`}>
+                    <h2 className={`${styles["h2-card"]} ${styles.heading} text`}>
 						Delivery Details
-					</h1>
+					</h2>
 					{/* Add email field */}
 					<div className={`${styles["cardform-outline"]} ${styles.mb4}`}>
 						<Field

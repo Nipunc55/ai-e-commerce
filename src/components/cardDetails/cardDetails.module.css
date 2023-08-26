@@ -1,21 +1,27 @@
 .card_container {
-	padding: 20px 300px 20px 300px;
+	padding: 2% 30% 5% 30%;
 	height: 90vh;
 }
-.h1-card {
+.h2-card {
 	letter-spacing: 0rem;
+	color: var(--text-color) !important;
+	
 }
 .row-with-inline {
 	display: flex;
+}
+.card_form{
+	padding: 5% 2% 5% 2%;
+	background-color: #19184e94;
 }
 .cardform-outline {
 	flex: 1;
 	margin-right: 5px;
 }
 .submit-btn {
-	border: 2px solid rgb(65, 101, 112);
+	border: 2px solid #fff;
 	border-radius: 20px;
-	background-color: rgb(65, 101, 112);
+	background-color: var(--primary-color);
 	padding: 5px 30px 5px 30px !important;
 	color: rgb(255, 255, 255);
 	font-size: 18px;
@@ -24,8 +30,8 @@
 }
 .submit-btn:hover {
 	background-color: rgb(255, 255, 255);
-	color: rgb(65, 101, 112);
-	border: 2px solid rgb(65, 101, 112);
+	color: var(--primary-color);
+	border: 2px solid var(--primary-color);
 }
 
 .redError {

@@ -47,7 +47,7 @@ function Home() {
 	return (
 		<>
 			<div className='container-sm'>
-				<div className='home-background' style={{ backgroundImage: `url(${homeImage})`  , backgroundRepeat: "no-repeat" , backgroundSize: "100%"}}>
+				<div className='home-background' >
 					<SearchBar
 						GetItems={(data) => {
 							GetItems(data);

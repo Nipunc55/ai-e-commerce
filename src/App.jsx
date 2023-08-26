@@ -12,12 +12,21 @@ import Footer from "./components/home/footer";
 import CardDetailsForm from "./components/cardDetails/cardDetails";
 import Cart from "./components/cart/Cart";
 import AboutUs from "./components/aboutUs/aboutUs";
+import homeImage from "./assets/images/home.jpg"
 import ContactUs from "./components/contactUs/contactUs";
+
+
 
 function App() {
 	return (
 		<>
-			<div className='main-container'>
+			<div
+				className='main-container'
+				style={{
+					backgroundImage: `url(${homeImage})`,
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "100%",
+				}}>
 				<Navbar />
 				<Router>
 					<Routes>
@@ -27,21 +36,20 @@ function App() {
 							element={<LoginForm />}
 						/>
 						<Route
-							path='/'
+							path='/contactUs'
 							exact
 							element={<ContactUs />}
 						/>
-
 						{/* <Route
 							path='/'
 							exact
 							element={<LoginForm />}
-						/> */}
-						{/* <Route
-							path='/'
+						/>  */}
+						<Route
+							path='/aboutUs'
 							exact
 							element={<AboutUs />}
-						/> */}
+						/>
 						<Route
 							path='/signUp'
 							element={<SignupForm />}
@@ -60,7 +68,7 @@ function App() {
 						/>
 
 						<Route
-							path='/checkout-user-details'
+							path='/'
 							element={<CardDetailsForm />}
 						/>
 					</Routes>

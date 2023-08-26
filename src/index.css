@@ -5,28 +5,24 @@ body {
   background-image: linear-gradient(to bottom, rgb(35, 56, 68), rgb(35, 56, 68)ffffff);
 } */
 body {
-	
-	background: linear-gradient(
-		
-		var(--primary-color) 87%,
-		var(--main-color) 100%
-	);
+	/* background-color: var(--primary-color) !important; */
+	background-color: #ffffff;
 	background-size: 300% 400%;
 	/* animation: gradiant 25s ease infinite; */
 	/* height: 100vh; */
 }
-.text{
+.text {
 	color: var(--text-color) !important;
 }
-.footer{
-	background-color: var(--secondary-color)!important;
+.footer {
+	background-color: var(--secondary-color) !important;
 }
-select{
-	background-color: var(--sub-color)!important;
-	color: var(--text-color)!important;
+select {
+	background-color: var(--sub-color) !important;
+	color: var(--text-color) !important;
 }
-option{
-	color: var(--text-color)!important;
+option {
+	color: var(--text-color) !important;
 }
 h1 {
 	color: var(--text-color);
@@ -36,19 +32,14 @@ h1 {
 	letter-spacing: 2rem;
 }
 :root {
-	
 	/* Dark Theme Colors - Blue and Cyan */
-		--primary-color: #09111e;
-		
-		--main-color: #00a6a6;
-		/* --main-color: #d4af37; */
-		--secondary-color: #005577;
-		
-		
-		--sub-color: #2c3e50;
-	
-		--text-color: #ffffff;
-		
+	--primary-color: #0c1c36;
 
-		
+	--main-color: #00a6a6;
+	/* --main-color: #d4af37; */
+	--secondary-color: #005577;
+
+	--sub-color: #253341c5;
+
+	--text-color: #ffffff;
 }

@@ -34,6 +34,13 @@
   color: var(--text-color);
   border: 1px solid var(--main-color);
 }
+
+.custom-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Additional styling as needed */
+
 @media (min-width: 441px) and (max-width: 990px) {
   .items {
     padding: 5px;
