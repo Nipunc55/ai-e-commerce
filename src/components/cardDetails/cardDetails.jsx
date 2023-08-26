@@ -37,7 +37,7 @@ const completeCheckout = async () => {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
-          // You might need to include additional headers like authentication
+      
         },
         body: JSON.stringify({  "mail":"nipunchathuranga45@gmail.com",
       "productDetails":{"name":"shirt","price":"100$"
@@ -51,7 +51,7 @@ const completeCheckout = async () => {
         // console.log('Cart items:', cartItems);
         alert("items checkout successfully...")
         setModalShow(true);
-        // You can update the UI or state with the updated cart items here
+      
       } else {
         console.error('Failed to complete checkout!');
       }

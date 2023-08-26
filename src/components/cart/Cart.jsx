@@ -12,7 +12,7 @@ export default function Cart() {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
-          // You might need to include additional headers like authentication
+        
         },
         
       });
@@ -22,7 +22,7 @@ export default function Cart() {
         const cartItems = await response.json();
         console.log('Cart items:', cartItems);
        setitems(cartItems)
-        // You can update the UI or state with the updated cart items here
+        
       } else {
         console.error('Failed to add to cart');
       }

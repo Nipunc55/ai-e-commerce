@@ -33,7 +33,7 @@ const FullCard = () => {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
-          // You might need to include additional headers like authentication
+         
         },
         body: JSON.stringify({ productIds }),
       });
@@ -44,7 +44,7 @@ const FullCard = () => {
         console.log('Cart items:', cartItems);
         alert("items added successfully...")
         navigate('/cart')
-        // You can update the UI or state with the updated cart items here
+      
       } else {
         console.error('Failed to add to cart');
       }
