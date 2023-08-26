@@ -46,15 +46,12 @@ const SignupForm = () => {
 	return (
 		
 		<div className='grid_container'>
-			<div className='pic_container'>
-				<img src={signImage} />
-			</div>
-
-			<div className='login_container '>
+			
+			<div className='login_container' style={{ backgroundImage: `url(${signImage})` }}>
 			<form className='form-container' onSubmit={handleSubmit}>
 				<h1 className='h1-signUp'>SignUp</h1>
 				{/* 2 column grid layout with text inputs for the first and last names */}
-				<div className='row mb-4'>
+				<div className='row mb-1'>
 					<div className='col'>
 						<div className='form-outline'>
 							<input
@@ -75,7 +72,7 @@ const SignupForm = () => {
 				</div>
 
 				{/* Email input */}
-				<div className='form-outline mb-4'>
+				<div className='form-outline mb-1'>
 					<input
 						type='email'
 						id='form3Example3'

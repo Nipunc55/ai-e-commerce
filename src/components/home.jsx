@@ -3,6 +3,7 @@ import SearchBar from "./home/searchBar";
 import HorizontalDropdowns from "./home/dropdownList";
 import CardGrid from "./home/cardGrid";
 import { useState } from "react";
+import homeImage from "../assets/images/home.jpg";
 import Navbar from "./home/navBar";
 import Footer from "./home/footer";
 
@@ -17,7 +18,7 @@ function Home() {
 			categories = "t-shirt",
 			gender = "male",
 		} = data;
-		
+
 		console.log(`/${text}/${color}/${gender}/${type}/${categories}`);
 		try {
 			const response = await fetch(
@@ -45,17 +46,20 @@ function Home() {
 
 	return (
 		<>
-			
 			<div className='container-sm'>
-				<SearchBar
-					GetItems={(data) => {
-						GetItems(data);
-					}}
-				/>
-				{items.length>0 ?(<CardGrid itemList={items} />):(<div className="empty-card-grid text">Serach...</div>)}
-				
+				<div className='home-background' style={{ backgroundImage: `url(${homeImage})`  , backgroundRepeat: "no-repeat" , backgroundSize: "100%"}}>
+					<SearchBar
+						GetItems={(data) => {
+							GetItems(data);
+						}}
+					/>
+					{items.length > 0 ? (
+						<CardGrid itemList={items} />
+					) : (
+						<div className='empty-card-grid text'></div>
+					)}
+				</div>
 			</div>
-			
 		</>
 	);
 }

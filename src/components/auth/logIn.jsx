@@ -43,11 +43,9 @@ const LoginForm = () => {
 	};
 	return (
 		<div className='grid_container'>
-			<div className='pic_container'>
-				<img src={signImage} />
-			</div>
-
-			<div className='login_container '>
+			<div
+				className='login_container'
+				style={{ backgroundImage: `url(${signImage})` }}>
 				<form
 					className='login-form'
 					onSubmit={handleSubmit}>
