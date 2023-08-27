@@ -14,7 +14,7 @@ const ukShoeSizes = [
  
 ];
 
-console.log(ukShoeSizes);
+let randomPrices=[]
 
 
 const FullCard = () => {
@@ -97,6 +97,12 @@ function getRandomPrice() {
   // Returns a random integer between min (inclusive) and max (inclusive)
   return Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;
 }
+useEffect(() => {
+  Object.keys(data).map((key)=>(
+    randomPrices.push(getRandomPrice())
+  ))
+}, [])
+
 
  function addToCart(){
 
@@ -109,7 +115,7 @@ function getRandomPrice() {
       <div className={styles.card_container}>
          <SweetAlert2 {...swalProps} />
           {Object.keys(data).length>0 && (
-           Object.keys(data).map((key)=>(
+           Object.keys(data).map((key,index)=>(
             <div key={key} className={styles.full_card}>
              <img
               key={key}
@@ -121,7 +127,7 @@ function getRandomPrice() {
            
             <div className={styles.item_details}>
               <h3>Code :{data[key].replace(/\.[^/.]+$/, '')}</h3>
-              <p>price : { getRandomPrice()} LKR</p>
+              <p>price : { randomPrices[index]} LKR</p>
                <input type="checkbox" name="option1" onChange={handleCheckboxChange} value={`${data[key]}`}></input>
             </div>
       </div>
