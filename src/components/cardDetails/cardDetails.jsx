@@ -34,6 +34,7 @@ const CardDetailsForm = () => {
 	});
 	
 const completeCheckout = async (data) => {
+
 	setSwalProps({
                     show: true,
                     title: 'Wait',
@@ -48,7 +49,7 @@ const completeCheckout = async (data) => {
           Authorization: `Bearer ${token}`,
       
         },
-        body: JSON.stringify({  "mail":`${data.email}`,
+        body: JSON.stringify({  "email":`${data.email}`,
                                "productDetails":{"name":"shirt","price":"100$"},
 							   "address":`${data.address}`
 
