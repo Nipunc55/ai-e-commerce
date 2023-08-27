@@ -14,11 +14,11 @@ function Home() {
 	async function GetItems(data) {
 		const baseUrl = "http://127.0.0.1:8000/predict";
 		const {
-			text = "i want to participate",
-			color = "white",
-			type = "Casual",
-			categories = "t-shirt",
-			gender = "male",
+			text = "",
+			color = "",
+			type = "",
+			categories = "",
+			gender = "",
 		} = data;
 
 		console.log(`/${text}/${color}/${gender}/${type}/${categories}`);

@@ -4,6 +4,18 @@ import { useState } from "react";
 import SweetAlert2 from 'react-sweetalert2';
 
 const dressSizes = ["Small", "Medium", "Large", "X-Large"];
+const ukShoeSizes = [
+  'UK 4',
+  'UK 5',
+  'UK 6',
+  'UK 7',
+  'UK 8',
+  'UK 9',
+ 
+];
+
+console.log(ukShoeSizes);
+
 
 const FullCard = () => {
   
@@ -97,6 +109,14 @@ const FullCard = () => {
       <label className="mb-2  text" htmlFor="size">Select Dress Size:</label>
       <select id="size" className="form-control input w-25">
         {dressSizes.map((size, index) => (
+          <option key={index} value={size}>
+            {size}
+          </option>
+        ))}
+      </select>
+       <label className="mb-2  text" htmlFor="size">Select Shoe Size:</label>
+      <select id="size" className="form-control input w-25">
+        {ukShoeSizes.map((size, index) => (
           <option key={index} value={size}>
             {size}
           </option>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
 import { Link } from 'react-router-dom';
@@ -6,6 +6,36 @@ import ContactUs from "../contactUs/contactUs";
 import AboutUs from "../aboutUs/aboutUs";
 
 function Navbar() {
+	useEffect(() => {
+	  getCartItemsCount();
+	}, [])
+	
+	 const getCartItemsCount = async () => {
+    try {
+     const token= localStorage.getItem("token");
+      const response = await fetch('http://localhost:5000/users/cart-items', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        
+        },
+        
+      });
+     
+
+      if (response.ok) {
+        const cartItems = await response.json();
+        console.log('Cart items:', cartItems);
+       setitems(cartItems)
+        
+      } else {
+        console.error('Failed to add to cart');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 	return (
 		<nav className='navbar navbar-expand-lg '>
 			<div className='container-sm'>

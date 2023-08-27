@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./cardDetails.module.css";
 import CheckoutModal from "../popUpModel/PopUp";
+import SweetAlert2 from 'react-sweetalert2';
+
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 const CardDetailsForm = () => {
 	const navigate = useNavigate();
+	 const [swalProps, setSwalProps] = useState({});
 	const [modalShow, setModalShow] = useState(false);
+
 	const initialValues = {
 		cardNumber: "",
 		cardName: "",
@@ -29,7 +33,12 @@ const CardDetailsForm = () => {
 		address: Yup.string().required("Address is required"),
 	});
 	
-const completeCheckout = async () => {
+const completeCheckout = async (data) => {
+	setSwalProps({
+                    show: true,
+                    title: 'Wait',
+                    text: 'Items are being checked out...',
+                });
     try {
      const token= localStorage.getItem("token");
       const response = await fetch('http://localhost:5000/users/send-mail', {
@@ -39,17 +48,18 @@ const completeCheckout = async () => {
           Authorization: `Bearer ${token}`,
       
         },
-        body: JSON.stringify({  "mail":"nipunchathuranga45@gmail.com",
-      "productDetails":{"name":"shirt","price":"100$"
+        body: JSON.stringify({  "mail":`${data.email}`,
+                               "productDetails":{"name":"shirt","price":"100$"},
+							   "address":`${data.address}`
 
-      } }),
+                              }),
       });
      
 
       if (response.ok) {
         // const succes = await response.json();
         // console.log('Cart items:', cartItems);
-        alert("items checkout successfully...")
+        // alert("items checkout successfully...")
         setModalShow(true);
       
       } else {
@@ -62,20 +72,23 @@ const completeCheckout = async () => {
 	
 
 	const handleSubmit = (values) => {
-		// form submission logic
+		
 
-		completeCheckout();
+		completeCheckout(values);
 	};
 
 	const handleModalClose = () => {
 		setModalShow(false);
 		navigate("/home");
 	};
+	
+	
 
 	
 
 	return (
 		<div className={styles.card_container}>
+			 <SweetAlert2 {...swalProps} />
 			<Formik
 				className='form-group'
 				initialValues={initialValues}
@@ -154,6 +167,7 @@ const completeCheckout = async () => {
 					{/* Add email field */}
 					<div className={`${styles["cardform-outline"]} ${styles.mb4}`}>
 						<Field
+						  
 							type='email'
 							name='email'
 							className={`form-control ${styles.input}`}
