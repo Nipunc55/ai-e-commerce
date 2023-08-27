@@ -112,7 +112,8 @@ const SignupForm = () => {
 									</InputAdornment>
 								}
 								label='Password'
-								
+								name='password'
+								onChange={handleChange}
 							/>
 						</FormControl>
 				</div>
