@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import ContactUs from "../contactUs/contactUs";
 import AboutUs from "../aboutUs/aboutUs";
 
 function Navbar() {
+	const [count, setcount] = useState(0)
 	useEffect(() => {
 	  getCartItemsCount();
 	}, [])
@@ -25,7 +26,8 @@ function Navbar() {
      
 
       if (response.ok) {
-        const cartItems = await response.json();
+        const cartItemsCount = await response.json();
+		setcount(cartItemsCount);
         console.log('Cart items:', cartItems);
        setitems(cartItems)
         
@@ -76,6 +78,7 @@ function Navbar() {
 							<a
 								className='nav-link text '
 								href='/cart'>
+								{count > 0 && <span className="cart-count">{count}</span>}
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									height='1em'
@@ -85,6 +88,7 @@ function Navbar() {
 										fill='#ffffff'
 									/>
 								</svg>
+								
 							</a>
 						</ul>
 						<ul className='nav-item'>

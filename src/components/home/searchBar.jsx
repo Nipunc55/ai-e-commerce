@@ -24,6 +24,7 @@ const SearchBar = ({ GetItems }) => {
 	const onDropDownSelect = () => {
 		const serachData = { ...selectedOptions, text: userInput };
 		setSelectedOptions(serachData);
+		console.log(serachData);
 	};
 	return (
 		<>

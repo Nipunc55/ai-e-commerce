@@ -12,6 +12,7 @@ function Home() {
 	const [items, setItems] = useState([]);
 	const [swalProps, setSwalProps] = useState({});
 	async function GetItems(data) {
+		// console.log(data);
 		const baseUrl = "http://127.0.0.1:8000/predict";
 		const {
 			text = "",

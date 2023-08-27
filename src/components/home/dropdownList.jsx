@@ -40,6 +40,8 @@ const colors = [
 ];
 const HorizontalDropdowns = ({ onSelect }) => {
 	const { selectedOptions, setSelectedOptions } = useContext(DropDownInput);
+	const [isDropdownClicked, setDropdownClicked] = useState(false);
+	const [selectedGender, setSelectedGender] = useState("");
 
 	const [selectedCatogeries, setSelectedCatogeries] = useState([]);
 
@@ -62,15 +64,22 @@ const HorizontalDropdowns = ({ onSelect }) => {
 		setSelectedOptions(newSelectedOptions);
 	};
 
-	const [isDropdownClicked, setDropdownClicked] = useState(false);
-	const [selectedGender, setSelectedGender] = useState("");
+ const handleDropdownChange = (event, dropdownName) => {
+    const newSelectedOptions= {...selectedOptions,
+      [dropdownName]: event.target.value,}
 
-	const handleDropdownChange = (event) => {
-		if (!isDropdownClicked) {
-			setDropdownClicked(true);
-		}
-		setSelectedGender(event.target.value);
-	};
+    setSelectedOptions(newSelectedOptions)
+
+
+  };
+
+	// const handleDropdownChange = (event) => {
+		
+	// 	if (!isDropdownClicked) {
+	// 		setDropdownClicked(true);
+	// 	}
+	// 	setSelectedGender(event.target.value);
+	// };
 	return (
 		<div className={styles.dropdownList_container}>
 			<div className={styles.dropdownGrid}>
@@ -96,8 +105,8 @@ const HorizontalDropdowns = ({ onSelect }) => {
 
 				<select
 					className={styles.items}
-					value={selectedGender}
-					onChange={handleDropdownChange}>
+					// value={selectedGender}
+					onChange={(e) => handleDropdownChange(e, "gender")}>
 					<option
 						className={styles.items_option}
 						value=''>
