@@ -50,7 +50,7 @@ const SignupForm = () => {
 				body: JSON.stringify(formData),
 			});
 			const data = await response.json();
-			console.log(data);
+			if (data.token != null) localStorage.setItem("token", data.token);
 
 			if (response.ok) {
 				navigate("/home");
