@@ -86,7 +86,7 @@ const SignupForm = () => {
 
 				{/* Email input */}
 				<div className='form-outline mb-1'>
-				<TextField fullWidth label="Email" id="fullWidth" />
+				<TextField name="email" fullWidth label="Email" id="fullWidth"  onChange={handleChange}/>
 				</div>
 
 				{/* Password input */}
@@ -94,7 +94,7 @@ const SignupForm = () => {
 				<FormControl
 							sx={{ m: 0, width: "100%" }}
 							variant='outlined' id="fullWidth">
-							<InputLabel htmlFor='outlined-adornment-password' id="fullWidth">
+							<InputLabel name="password" htmlFor='outlined-adornment-password' id="fullWidth" onChange={handleChange}>
 								Password
 							</InputLabel>
 							<OutlinedInput
