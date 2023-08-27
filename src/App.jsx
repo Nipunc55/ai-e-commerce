@@ -37,7 +37,7 @@ function App() {
           <Routes>
             <Route path="/logIn" element={<LoginForm />} />
             {/* <Route path="/contactUs" element={<ContactUs />} /> */}
-            <Route path="/" element={<LoginForm />} />
+            {/* <Route path="/" element={<LoginForm />} /> */}
             {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
             <Route path="/signUp" element={<SignupForm />} />
             <Route
@@ -64,7 +64,7 @@ function MainContent({ hideNavbarPaths }) {
         <Route path="/home" element={<Home />} />
         <Route path="/card" element={<FullCard />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout-user-details" element={<CardDetailsForm />} />
+        <Route path="/" element={<CardDetailsForm />} />
 		    <Route path="/contactUs" element={<ContactUs />} />
 		    <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
