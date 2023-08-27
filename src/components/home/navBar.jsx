@@ -14,7 +14,7 @@ function Navbar() {
 	 const getCartItemsCount = async () => {
     try {
      const token= localStorage.getItem("token");
-      const response = await fetch('http://localhost:5000/users/cart-items', {
+      const response = await fetch('http://localhost:5000/users/cart-items-count', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -27,9 +27,9 @@ function Navbar() {
 
       if (response.ok) {
         const cartItemsCount = await response.json();
-		setcount(cartItemsCount);
-        console.log('Cart items:', cartItems);
-       setitems(cartItems)
+		setcount(cartItemsCount.itemCount);
+        console.log('Cart itemscount:', cartItemsCount);
+    //    setitems(cartItems)
         
       } else {
         console.error('Failed to add to cart');
@@ -62,7 +62,7 @@ function Navbar() {
 						{/* Left links */}
 						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
 							<img
-								style={{ width: "90px", height: "40px", borderRadius: "10px" }}
+								style={{ width: "30%", height: "30%", borderRadius: "10px" }}
 								src='/images/logo.png'></img>
 							<li className='nav-item'>
 								<a

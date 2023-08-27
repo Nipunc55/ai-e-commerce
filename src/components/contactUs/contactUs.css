@@ -3,7 +3,9 @@
 	padding: 2% 30% 5% 30%;
 	background-repeat: no-repeat;
 	background-position: bottom;
-	background-size: 100%;
+	background-size: cover;
+	/* height: ; */
+	height: 100vh;
 }
 .contactUs-form {
 	padding: 10% 2% 10% 2%;

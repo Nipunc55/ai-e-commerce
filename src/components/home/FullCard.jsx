@@ -1,6 +1,6 @@
 import { useNavigate, useParams,useLocation  } from "react-router-dom";
 import styles from "./cardComponent.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SweetAlert2 from 'react-sweetalert2';
 
 const dressSizes = ["Small", "Medium", "Large", "X-Large"];
@@ -24,6 +24,7 @@ const FullCard = () => {
   const location = useLocation();
   const data = location.state.data;
  const [swalProps, setSwalProps] = useState({});
+ const [shoe, setShoe] = useState(false);
 
   const handleCheckboxChange = (event) => {
     console.log(productIds);
@@ -36,6 +37,23 @@ const FullCard = () => {
       );
     }
   };
+  useEffect(() => {
+    // Check if any object field contains "Heels" or "Shoes"
+  //  const hasShoeOrHeels = data.names.some(name =>
+  //     name.includes('Heels') || name.includes('Shoes')
+  //   );
+  // const hasShoeOrHeels = Object.values(data).some(value =>
+  //     value.includes('Heels') || value.includes('Shoes')
+  //   );
+   const hasShoeOrHeels = Object.values(data).some(value =>
+      value.includes('Heels') || value.includes('Shoes')
+    );
+ 
+
+
+    setShoe(Object.keys(data).includes('Heels')||Object.keys(data).includes('Shoes'));
+  }, [data]);
+  
 
  const handleAddToCart = async () => {
    setSwalProps({
@@ -75,6 +93,11 @@ const FullCard = () => {
     }
   };
 
+function getRandomPrice() {
+  // Returns a random integer between min (inclusive) and max (inclusive)
+  return Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;
+}
+
  function addToCart(){
 
 
@@ -97,8 +120,8 @@ const FullCard = () => {
             />
            
             <div className={styles.item_details}>
-              <h3>Code :{data[key].slice(" ")[0]}</h3>
-              <p>price : {100}$</p>
+              <h3>Code :{data[key].replace(/\.[^/.]+$/, '')}</h3>
+              <p>price : { getRandomPrice()} LKR</p>
                <input type="checkbox" name="option1" onChange={handleCheckboxChange} value={`${data[key]}`}></input>
             </div>
       </div>
@@ -114,14 +137,19 @@ const FullCard = () => {
           </option>
         ))}
       </select>
-       <label className="mb-2  text" htmlFor="size">Select Shoe Size:</label>
+     {shoe ? (<>
+        <label className="mb-2  text" htmlFor="size">Select Shoe Size:</label>
       <select id="size" className="form-control input w-25">
         {ukShoeSizes.map((size, index) => (
           <option key={index} value={size}>
             {size}
           </option>
         ))}
-      </select>
+      </select></>
+      ) : (
+        null
+      )}
+       
       <button className="btn btn-warning mt-2" onClick={handleAddToCart}>Add To Cart</button>
     </div>
     </div>
